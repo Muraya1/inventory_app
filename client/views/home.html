@@ -1,0 +1,464 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Andrew's Turi | Inventory Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --turi-blue: #002147;
+            --turi-gold: #C5A059;
+            --white: #ffffff;
+            --light-gray: #f4f7f6;
+            --text-dark: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: var(--turi-blue);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--turi-gold);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--turi-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0, 33, 71, 0.8), rgba(0, 33, 71, 0.8)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-weight: 300;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Main Options Section */
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 50px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .option-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border-top: 5px solid transparent;
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-top: 5px solid var(--turi-gold);
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .option-card h3 {
+            font-size: 1.6rem;
+            color: var(--turi-blue);
+            margin-bottom: 15px;
+        }
+
+        .option-card p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-sales {
+            background-color: var(--turi-blue);
+            color: white;
+        }
+
+        .btn-sales:hover {
+            background-color: #003366;
+        }
+
+        .btn-order {
+            background-color: var(--turi-gold);
+            color: var(--turi-blue);
+        }
+
+        .btn-order:hover {
+            background-color: #b38f4d;
+        }
+
+        /* Quick Stats Section */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-size: 1.5rem;
+            color: var(--turi-blue);
+        }
+
+        .stat-item span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>ST. ANDREW'S <span>TURI</span></h1>
+        </div>
+        <div class="user-info">
+            <span>Admin Portal v2.0</span>
+        </div>
+        <div class="user-info">
+            <a href="login.html" onclick="localStorage.clear()" >Logout</a>
+        </div>
+        
+    </header>
+
+    <section class="hero">
+        <h2>Store Inventory Management</h2>
+        <p>Effortlessly track stock, manage school sales, and restock supplies.</p>
+    </section>
+
+    <div class="container">
+        <div class="option-card" onclick="location.href='#sales'">
+            <span class="icon">📈</span>
+            <h3>Point of Sales</h3>
+            <p>Process new transactions, generate receipts, and update stock levels in real-time for students and staff.</p>
+            <a href="total_sales.html" class="btn btn-sales">Open Sales Terminal</a>
+        </div>
+
+        <div class="option-card" onclick="location.href='#orders'">
+            <span class="icon">📦</span>
+            <h3>Make Orders</h3>
+            <p>Running low? Place new supply orders, manage vendors, and track incoming shipments to the school store.</p>
+            <a href="categories.html" class="btn btn-order">Create New Order</a>
+        </div>
+    </div>
+
+    
+
+    <footer>
+        <p>&copy; 2026 St. Andrew's School, Turi. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>St. Andrew's Turi | Inventory Management</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --turi-blue: #002147;
+    --turi-gold: #C5A059;
+    --light-bg: #f4f7f6;
+    --text-dark: #1f2933;
+    --muted: #6b7280;
+    --shadow-soft: 0 10px 30px rgba(0,0,0,.1);
+    --shadow-strong: 0 20px 45px rgba(0,0,0,.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: var(--turi-blue);
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid var(--turi-gold);
+    box-shadow: var(--shadow-soft);
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--turi-gold);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: .9rem;
+}
+
+.header-right a {
+    color: var(--turi-gold);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.header-right a:hover {
+    text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+    padding: 90px 20px 110px;
+    text-align: center;
+    color: white;
+    background:
+        linear-gradient(rgba(0,33,71,.85), rgba(0,33,71,.85)),
+        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    max-width: 650px;
+    margin: auto;
+    opacity: .95;
+}
+
+/* MAIN OPTIONS */
+.container {
+    max-width: 1100px;
+    margin: -70px auto 70px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+}
+
+.option-card {
+    background: white;
+    padding: 45px 40px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform .35s ease, box-shadow .35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.option-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: transparent;
+    transition: background .35s ease;
+}
+
+.option-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-strong);
+}
+
+.option-card:hover::before {
+    background: var(--turi-gold);
+}
+
+.icon {
+    font-size: 52px;
+    margin-bottom: 22px;
+}
+
+.option-card h3 {
+    font-size: 1.6rem;
+    color: var(--turi-blue);
+    margin-bottom: 14px;
+}
+
+.option-card p {
+    color: var(--muted);
+    font-size: .95rem;
+    margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 13px 34px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .3s ease;
+}
+
+.btn-sales {
+    background: var(--turi-blue);
+    color: white;
+}
+
+.btn-sales:hover {
+    background: #003366;
+    transform: translateY(-2px);
+}
+
+.btn-order {
+    background: var(--turi-gold);
+    color: var(--turi-blue);
+}
+
+.btn-order:hover {
+    background: #b38f4d;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    font-size: .9rem;
+    color: #6b7280;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .hero h2 { font-size: 2.1rem; }
+    header { flex-direction: column; gap: 10px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <h1>ST. ANDREW'S <span>TURI</span></h1>
+    </div>
+    <div class="header-right">
+        <span>v2.0</span>
+        <a href="login.html" onclick="localStorage.clear()">Logout</a>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Store Inventory Management</h2>
+    <p>Manage stock, process school sales, and restock supplies efficiently with a unified system.</p>
+</section>
+
+<div class="container">
+    <div class="option-card">
+        <div class="icon">📈</div>
+        <h3>Point of Sales</h3>
+        <p>Process transactions, generate receipts, and automatically update stock levels for orders made.</p>
+        <a href="total_sales.html" class="btn btn-sales">Open Sales Terminal</a>
+    </div>
+
+    <div class="option-card">
+        <div class="icon">📦</div>
+        <h3>Make Orders</h3>
+        <p>Create new supply orders, manage vendors, and track incoming deliveries for the school store.</p>
+        <a href="categories.html" class="btn btn-order">Create New Order</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 St. Andrew's School, Turi. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

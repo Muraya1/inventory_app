@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Category | Premium Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #f0f7ff 0%, #c9e2ff 100%);
+            --primary-blue: #007bff;
+            --deep-blue: #0056b3;
+            --glass: rgba(255, 255, 255, 0.7);
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+            color: #1a2b3c;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(to right, #007bff, #00c6ff);
+            /*-webkit-background-clip: text;*/
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism Card for Admin */
+        .admin-only {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .admin-only:hover {
+            transform: translateY(-5px);
+        }
+
+        .admin-only h2 {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            color: var(--deep-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        input[type="text"] {
+            flex-grow: 1;
+            padding: 14px 20px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            background: white;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+            transition: 0.3s;
+            outline: none;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
+        }
+
+        button#createCategoryButton {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        button#createCategoryButton:hover {
+            background: var(--deep-blue);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Category Grid */
+        h2.list-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+            padding-left: 10px;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        /* High Reaction Category Items */
+        .category-item {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            border: 1px solid #f0f0f0;
+        }
+
+        .category-item:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 30px rgba(0, 123, 255, 0.2);
+        }
+
+        /* Floating Home Dock */
+        .status-bar {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(10, 25, 47, 0.9);
+            padding: 12px 30px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        .status-bar a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .status-bar a:hover {
+            background: rgba(255,255,255,0.1);
+            color: #00c6ff;
+        }
+
+        .status-bar .home-btn {
+            background: var(--primary-blue);
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+        }
+
+        .status-bar .home-btn:hover {
+            background: white;
+            color: var(--primary-blue) !important;
+        }
+
+        /* Loading Animation */
+        .loader {
+            color: var(--primary-blue);
+            font-style: italic;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Inventory Categories</h1>
+
+        <div class="admin-only">
+            <h2><i class="fas fa-layer-group"></i> Create New Category</h2>
+            <form id="createCategoryForm">
+                <div class="input-group">
+                    <input type="text" id="newCategoryName" placeholder="e.g. Office Electronics" required>
+                    <button type="submit" id="createCategoryButton">
+                        <i class="fas fa-plus me-2"></i> Create
+                    </button>
+                </div>
+                <p id="categoryMessage" style="margin-top: 10px; font-size: 0.9rem;"></p>
+            </form>
+        </div>
+
+        <div class="container">
+
+        <h1>Inventory Categories</h1>
+
+
+        <div class="admin-only">
+            <h2><i class="fas fa-layer-group"></i> ADD ITEMS IN BULK</h2>
+                <div class="input-group">
+                    <button type="submit" onclick="window.location.href='bulk.html'" id="createCategoryButton">
+                        <i class="fas fa-plus me-2"></i> ADD
+                    </button>
+                </div>
+                <p id="categoryMessage" style="margin-top: 10px; font-size: 0.9rem;"></p>
+        </div>
+       
+
+
+
+        <h2 class="list-title">Explore Collections</h2>
+        <div id="categoryList" class="selection-grid">
+            <div class="loader">✨ Fetching your workspace...</div>
+        </div>
+        
+        <div class="status-bar">
+            <a href="home.html" class="home-btn"><i class="fas fa-home"></i> Home</a>
+            <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.2);"></div>
+            <!-- <a href="order_history.html"><i class="fas fa-clock-rotate-left"></i> History</a> 
+            <a href="reports.html"><i class="fas fa-chart-pie"></i> Reports</a>  -->
+            <a href="login.html" onclick="localStorage.clear()" style="color: #ff4d4d;"><i class="fas fa-power-off"></i> Logout</a>
+        </div>
+    </div>
+
+    <script src="../js/create.js"></script>
+    <script src="../js/app.js"></script>
+    
+    <script>
+        // Interactive Hover sound or effect could go here
+        // Simple script to handle view logic
+        window.onload = function() {
+            // Mocking the handle category load
+            if(typeof handleCategories === "function") handleCategories();
+        };
+    </script>
+</body>
+</html>

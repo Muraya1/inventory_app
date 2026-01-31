@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Items | Turi Inventory</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --blue-dark: #071a2f;
+    --blue-main: #0b3c6f;
+    --blue-soft: #1e5fa3;
+    --blue-light: #4da3ff;
+    --cyan-accent: #7dd3fc;
+    --bg-glass: rgba(255,255,255,.85);
+    --border-soft: rgba(255,255,255,.25);
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+
+    --shadow-soft: 0 20px 40px rgba(2,25,64,.15);
+    --shadow-hover: 0 30px 60px rgba(2,25,64,.25);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background:
+        radial-gradient(circle at top right, #1e40af, transparent 40%),
+        radial-gradient(circle at bottom left, #0284c7, transparent 45%),
+        linear-gradient(180deg, #020617, #020617);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* ERROR */
+#itemsError {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 14px;
+    border-radius: 10px;
+    background: #fee2e2;
+    color: #991b1b;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 22px;
+    background: var(--bg-glass);
+    backdrop-filter: blur(18px);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-soft);
+}
+
+/* HEADER */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 26px;
+    border-bottom: 3px solid var(--cyan-accent);
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.1rem;
+    color: var(--blue-main);
+}
+
+h1 span {
+    color: var(--blue-light);
+}
+
+/* ADD BUTTON */
+.btn-add {
+    background: linear-gradient(135deg, var(--blue-main), var(--blue-soft));
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(30,64,175,.4);
+    transition: all .35s ease;
+}
+
+.btn-add:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 18px 45px rgba(30,64,175,.55);
+}
+
+/* SEARCH */
+.controls-row {
+    margin-bottom: 35px;
+}
+
+.search-box label {
+    font-weight: 600;
+    font-size: .85rem;
+    color: var(--blue-main);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 999px;
+    border: 1px solid var(--border-soft);
+    font-size: 1rem;
+    background: rgba(255,255,255,.7);
+    transition: all .3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--blue-light);
+    box-shadow: 0 0 0 5px rgba(77,163,255,.25);
+}
+
+/* SECTION TITLE */
+h2 {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+/* INVENTORY LIST */
+#itemList {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+}
+
+/* HEADER ROW */
+.item-header {
+    background: linear-gradient(135deg, var(--blue-main), var(--blue-soft));
+    color: white;
+    padding: 18px 22px;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 110px;
+    gap: 15px;
+    font-size: .85rem;
+}
+
+/* ITEM ROW */
+.item-row {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 110px;
+    gap: 15px;
+    padding: 18px 22px;
+    align-items: center;
+    border-bottom: 1px solid rgba(15,23,42,.08);
+    background: rgba(255,255,255,.65);
+    transition: all .3s ease;
+}
+
+.item-row:hover {
+    background: rgba(77,163,255,.08);
+    transform: scale(1.01);
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+/* INPUT */
+.item-row input[type="number"] {
+    width: 75px;
+    padding: 7px;
+    border-radius: 8px;
+    border: 1px solid var(--border-soft);
+    text-align: center;
+}
+
+/* SMALL ADD */
+.add-btn-small {
+    background: linear-gradient(135deg, var(--cyan-accent), var(--blue-light));
+    border: none;
+    color: var(--blue-dark);
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.add-btn-small:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(77,163,255,.45);
+}
+
+/* STATUS BAR */
+.status-bar {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.status-bar a {
+    background: rgba(255,255,255,.75);
+    border: 1px solid var(--border-soft);
+    padding: 13px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--blue-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all .3s ease;
+}
+
+.status-bar a:hover {
+    background: linear-gradient(135deg, var(--blue-light), var(--cyan-accent));
+    color: var(--blue-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(77,163,255,.35);
+}
+</style>
+</head>
+
+<body>
+
+<div id="itemsError" style="display:none;"></div>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>Items in Category: <span id="categoryNameDisplay"></span></h1>
+        <button class="btn-add" onclick="window.location.href='add_item.html'">
+            ➕ Add New Item
+        </button>
+    </div>
+
+    <div class="controls-row">
+        <div class="search-box">
+            <label for="itemSearchInput">Search Inventory</label>
+            <input type="text" id="itemSearchInput" placeholder="Type item name to filter results...">
+        </div>
+    </div>
+
+    <h2>Current Inventory</h2>
+
+    <div id="itemList">
+        <div class="item-header">
+            <div>Item Name</div>
+            <div>In Stock</div>
+            <div>Order Qty</div>
+            <div>Action</div>
+        </div>
+        <!-- JS injects rows -->
+    </div>
+
+    <div class="status-bar">
+        <a href="cart.html">🛒 View Cart</a>
+        <a href="categories.html">⬅ Back to Categories</a>
+        <a href="reports.html">📊 Inventory Reports</a>
+    </div>
+
+</div>
+
+<script src="../js/create.js"></script>
+<script src="../js/app.js"></script>
+<script>
+function openEditItem(itemId) {
+    sessionStorage.setItem('current_item_id', itemId);
+    window.location.href = 'edit_item.html?item_id=' + itemId;
+}
+</script>
+
+</body>
+</html>

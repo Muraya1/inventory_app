@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review & Place Order</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .cart-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .cart-table th, .cart-table td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        .cart-table th { background-color: #f0f0f0; }
+        .finalize-section { padding-top: 20px; border-top: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Review Order</h1>
+        
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cartItemsBody">
+                </tbody>
+        </table>
+
+        <div class="finalize-section">
+            <form id="orderForm">
+                <h2>Receiver Details</h2>
+                <div class="input-group">
+                    <label for="receiverName">Receiver's Name:</label>
+                    <input type="text" id="receiverName" required placeholder="e.g., Daniel">
+                </div>
+                <div class="input-group">
+                        <label for="vendorName">Vendor Name (Required for Report)</label>
+                        <input type="text" class="form-control" id="vendorName" required placeholder="e.g., Daniel">
+                    </div>
+
+            <!-- <div class="form-group">
+                    <label for="departmentId">Department (Required for Reporting)</label>
+                    <select class="form-control" id="departmentId" required>
+                        <option value="">-- Loading Departments --</option>
+                    </select>
+                </div> -->
+                <!-- <div class="form-group">
+                    <label for="departmentName">Department Name (Required for Reporting)</label>
+                    <input type="text" class="form-control" id="departmentName" required>
+                </div> -->
+                                <div class="form-group">
+                    <label for="orderDepartment">Department:</label>
+                    <select id="orderDepartment" required>
+                        <option value="">-- Select Department --</option>
+                        </select>
+                </div>
+                
+                <p id="orderMessage" class="error-message"></p>
+                
+                <button type="submit" id="placeOrderButton">Place Order</button>
+            </form>
+            
+            <a href="items.html" style="display: block; margin-top: 10px;">← Back to Items</a>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', displayCart);
+    </script>
+</body>
+</html>

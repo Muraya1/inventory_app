@@ -1,0 +1,702 @@
+[2026-01-16 23:13:00] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments | PAYLOAD: 
+[2026-01-16 23:13:06] IP: ::1 | POST: /inventory_app/api/endpoints/auth.php | PAYLOAD: {"username":"admin","password":"12345"}
+[2026-01-16 23:13:52] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments | PAYLOAD: 
+[2026-01-16 23:14:14] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments | PAYLOAD: 
+[2026-01-16 23:14:17] IP: ::1 | GET: /inventory_app/api/endpoints/pay_logic.php?dept_id=10 | PAYLOAD: 
+[2026-01-16 23:14:32] IP: ::1 | POST: /inventory_app/api/endpoints/pay_logic.php | PAYLOAD: {"dept_id":"10","amount":"980","date":"2026-01-17","ref":"mpesa"}
+[2026-01-16 23:14:35] IP: ::1 | GET: /inventory_app/api/endpoints/pay_logic.php?dept_id=10 | PAYLOAD: 
+[2026-01-17 00:02:25] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments | PAYLOAD: 
+[2026-01-17 00:02:30] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments | PAYLOAD: 
+[2026-01-17 00:04:10] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments | PAYLOAD: 
+[2026-01-17 00:04:10] IP: ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10 | PAYLOAD: 
+[2026-01-17 00:04:10] IP: ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10 | PAYLOAD: 
+[2026-01-17 00:04:14] IP: ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10 | PAYLOAD: 
+[2026-01-17 00:04:16] IP: ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=2&limit=10 | PAYLOAD: 
+[2026-01-17 00:04:25] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments | PAYLOAD: 
+[2026-01-17 00:04:28] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments | PAYLOAD: 
+[2026-01-17 00:04:39] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_department_financial_report&dept_id=1&start_date=2026-01-02&end_date=2026-01-06 | PAYLOAD: 
+[2026-01-17 00:04:50] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments | PAYLOAD: 
+[2026-01-17 00:04:51] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments | PAYLOAD: 
+[2026-01-17 00:05:02] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_department_financial_report&dept_id=1&start_date=2026-01-01&end_date=2026-01-17 | PAYLOAD: 
+[2026-01-17 00:05:35] IP: ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments | PAYLOAD: 
+------------------------------------------
+[2026-01-17 00:09:35] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:09:51] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"ets2mobile"}
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:13:47] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:13:50] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:13:58] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:14:51] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:14:55] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:11] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:13] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:16] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:18] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:18] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:21] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:21] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:49] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:56] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"user_id":"1","receiver_name":"daniel","vendor_name":"daniel","department_name":"10","items":[{"item_id":93,"name":"Mechanical Keyboard RGB","quantity":100}]}
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:59] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:59] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:25:59] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:26:05] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:26:07] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:36:44] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:36:44] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:36:46] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:37:01] ::1 | POST: /inventory_app/api/endpoints/data.php?resource=item_id
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:37:02] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:37:02] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:37:47] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:37:53] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:37:53] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:37:59] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:37:59] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:38:28] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:38:35] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:38:45] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:39:00] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:46:09] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+ONSE: 
+------------------------------------------
+[2026-01-17 00:46:52] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:46:52] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:22] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:51] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:51] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:52] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:52] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:52] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:52] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:53] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:53] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:53] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:53] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:55] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:47:55] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:08] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:08] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:08] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+ONSE: 
+------------------------------------------
+[2026-01-17 00:48:39] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:39] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:40] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:40] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:40] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:40] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:40] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:40] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:41] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:41] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:41] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+ONSE: 
+------------------------------------------
+[2026-01-17 00:48:41] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:48:41] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:49] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:49] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:50] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:50] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:50] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:50] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:51] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:51] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:51] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:51] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:51] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:51] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:51] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:51] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:52] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:52] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:57] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:49:57] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:50:37] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-17 00:50:37] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 16:57:03] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 16:57:12] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-01-18 16:57:15] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 16:59:05] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 16:59:05] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:01:21] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:01:21] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:02:32] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:02:34] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:02:58] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:02:58] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:05:46] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:05:46] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:05:48] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:05:48] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:05:49] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:05:49] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:05:49] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:05:49] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:06:10] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:06:10] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:09:55] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:09:55] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:10:52] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:10:52] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:10:54] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:10:57] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:12:42] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:12:42] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:13:30] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:13:30] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:13:33] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:13:37] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:13:46] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:14:02] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:14:13] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:14:34] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:43:39] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:43:40] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:43:40] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:43:46] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:44:11] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:46:45] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:46:46] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:46:46] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:49:26] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:49:26] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:50:46] ::1 | GET: /inventory_app/api/endpoints/export_csv_stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:52:23] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:52:24] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:52:24] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:55:18] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:56:24] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:56:24] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:56:24] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:56:24] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:56:36] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:59:07] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:59:08] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 17:59:11] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:02:18] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:04:19] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:04:20] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:20:08] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:20:54] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:21:48] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:22:34] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:22:42] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:22:47] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:22:47] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:23:17] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:23:17] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:24:06] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-18 18:24:06] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-27 20:02:26] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-27 20:02:35] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-01-27 20:02:39] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-27 20:34:36] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-27 20:34:39] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-27 20:34:39] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-01-27 20:34:43] ::1 | GET: /inventory_app/api/endpoints/export_csv_stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 

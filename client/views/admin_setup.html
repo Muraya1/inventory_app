@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Setup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px;
+      background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+      color: #0f172a;
+    }
+
+    .wrapper {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(2, 132, 199, 0.15);
+      border: 1px solid #bae6fd;
+    }
+
+    h2 {
+      text-align: center;
+      color: #0369a1;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #075985;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #93c5fd;
+      margin-bottom: 18px;
+      font-size: 1rem;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #0284c7;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: #0369a1;
+    }
+
+    button:disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+    }
+
+    .message {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .success {
+      color: #15803d;
+    }
+
+    .error {
+      color: #b91c1c;
+    }
+
+    @media (max-width: 768px) {
+      .wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+    .back-btn {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-blue);
+    color: rgb(80, 133, 174) !important;
+    text-decoration: none;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.65rem;
+    font-weight: 800;
+    border: 4px solid white;
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* 👇 this is the key part */
+    position: fixed;
+    left: 0px;
+    bottom: 20px;
+    z-index: 999;
+}
+
+        .back-btn:hover {
+            transform: scale(1.15) translateY(-10px);
+            background: #00c6ff;
+        }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <!-- ADD DEPARTMENT -->
+    <div class="card">
+      <h2>🏢 Add Department</h2>
+
+      <form id="departmentForm">
+        <label>Department Name</label>
+        <input type="text" id="departmentName" placeholder="e.g. Finance" required />
+
+        <button type="submit" id="deptBtn">Add Department</button>
+      </form>
+
+      <div id="deptMessage" class="message"></div>
+    </div>
+
+    <!-- ADD USER -->
+    <div class="card">
+      <h2>👤 Add User</h2>
+
+      <form id="userForm">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="e.g. jdoe" required />
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter password" required />
+
+        <label>Role</label>
+        <select id="role" required>
+          <option value="">Select role</option>
+          <option value="admin">Admin</option>
+          <option value="manager">Manager</option>
+          <option value="staff">Staff</option>
+        </select>
+
+        <button type="submit" id="userBtn">Add User</button>
+      </form>
+
+      <div id="userMessage" class="message"></div>
+    </div>
+
+  </div>
+  <div class="status-bar">
+        <a href="total_sales.html" class="back-btn">
+            <!-- <i class="fas fa-home fa-lg mb-1"></i> -->
+            <span>← Back</span>
+        </a>
+    </div>
+
+  <script>
+    //const ADD_DEPARTMENT_URL = "../api/add_department.php";
+    const ADD_DEPARTMENT_URL = "http://localhost/inventory_app/api/endpoints/reports.php?resource=department_name"; // 🔴 adjust if needed
+    const ADD_USER_URL = "http://localhost/inventory_app/api/endpoints/register.php";
+
+    const authToken = localStorage.getItem("auth_token");
+
+    /* ===================== ADD DEPARTMENT ===================== */
+    document.getElementById("departmentForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("departmentName").value.trim();
+      const msg = document.getElementById("deptMessage");
+      const btn = document.getElementById("deptBtn");
+
+      if (!authToken) return show(msg, "Authentication required.", "error");
+      if (!name) return show(msg, "Department name is required.", "error");
+
+      btn.disabled = true;
+      show(msg, "Saving...", "");
+
+      try {
+        const res = await fetch(ADD_DEPARTMENT_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${authToken}`
+          },
+          body: JSON.stringify({ department_name: name })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          show(msg, "✔️ Department added successfully!", "success");
+          e.target.reset();
+        } else {
+          show(msg, data.message || "Failed to add department.", "error");
+        }
+      } catch {
+        show(msg, "Network error.", "error");
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    /* ===================== ADD USER ===================== */
+    document.getElementById("userForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const role = document.getElementById("role").value;
+      const msg = document.getElementById("userMessage");
+      const btn = document.getElementById("userBtn");
+
+      if (!authToken) return show(msg, "Authentication required.", "error");
+      if (!username || !role) return show(msg, "All fields are required.", "error");
+
+      btn.disabled = true;
+      show(msg, "Saving...", "");
+
+      try {
+        const res = await fetch(ADD_USER_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${authToken}`
+          },
+          body: JSON.stringify({
+            username: username,
+            password: password,
+            role: role
+          })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          show(msg, "✔️ User added successfully!", "success");
+          e.target.reset();
+        } else {
+          show(msg, data.message || "Failed to add user.", "error");
+        }
+      } catch {
+        show(msg, "Network error.", "error");
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    function show(el, text, type) {
+      el.textContent = text;
+      el.className = `message ${type}`;
+    }
+  </script>
+
+</body>
+</html>

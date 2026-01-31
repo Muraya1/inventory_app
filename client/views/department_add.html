@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Department</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px;
+      background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+      color: #0f172a;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(2, 132, 199, 0.15);
+      border: 1px solid #bae6fd;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0369a1;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #075985;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #93c5fd;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #0284c7;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: #0369a1;
+    }
+
+    button:disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+    }
+
+    .message {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .success {
+      color: #15803d;
+    }
+
+    .error {
+      color: #b91c1c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🏢 Add Department</h1>
+
+    <form id="addDepartmentForm">
+      <label for="departmentName">Department Name</label>
+      <input
+        type="text"
+        id="departmentName"
+        placeholder="e.g. Human Resources"
+        required
+      />
+
+      <button type="submit" id="submitBtn">Add Department</button>
+    </form>
+
+    <div id="message" class="message"></div>
+  </div>
+
+   <div class="container">
+    <h1>Add user</h1>
+    <i class="fas fa-user-circle fa-2x text-secondary"></i>
+
+    <form id="useraddForm">
+      <label  for="departmentName">User Name</label>
+      <input
+        type="text"
+        id="departmentName"
+        placeholder="e.g. John Doe"
+        required
+      />
+
+      <button type="submit" id="submitBtn">Add User</button>
+    </form>
+    
+
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    const API_ADD_DEPARTMENT_URL = "http://localhost/inventory_app/api/endpoints/reports.php?resource=department_name"; // 🔴 adjust if needed
+
+    const form = document.getElementById("addDepartmentForm");
+    const departmentInput = document.getElementById("departmentName");
+    const messageEl = document.getElementById("message");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const departmentName = departmentInput.value.trim();
+      const authToken = localStorage.getItem("auth_token");
+
+      if (!departmentName) {
+        showMessage("Department name is required.", "error");
+        return;
+      }
+
+      if (!authToken) {
+        showMessage("Authentication required.", "error");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      showMessage("Adding department...", "");
+
+      try {
+        const response = await fetch(API_ADD_DEPARTMENT_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${authToken}`
+          },
+          body: JSON.stringify({
+            department_name: departmentName
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          showMessage("✔️ Department added successfully!", "success");
+          setTimeout(() => {
+    window.location.href = "department_add.html"; // 🔴 target page
+  }, 1500);
+          departmentInput.value = "";
+
+        } else {
+          showMessage(result.message || "Failed to add department.", "error");
+        }
+
+      } catch (error) {
+        console.error(error);
+        showMessage("Network error. Please try again.", "error");
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+
+    function showMessage(text, type) {
+      messageEl.textContent = text;
+      messageEl.className = `message ${type}`;
+    }
+  </script>
+
+</body>
+</html>
