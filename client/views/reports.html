@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory Insights | Inventory Pro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+    --primary: #6366f1;
+    --secondary: #22d3ee;
+    --glass: rgba(255,255,255,.78);
+    --border: rgba(255,255,255,.35);
+    --text: #0f172a;
+    --muted: #64748b;
+    --shadow: 0 30px 70px rgba(0,0,0,.15);
+}
+
+* { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+body {
+    margin: 0;
+    padding: 40px 20px 120px;
+    min-height: 100vh;
+    background: linear-gradient(-45deg,#6366f1,#22d3ee,#818cf8,#38bdf8);
+    background-size: 400% 400%;
+    animation: bgMove 14s ease infinite;
+    color: var(--text);
+}
+
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HEADINGS */
+h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(to right, #fff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    text-align: center;
+    color: #e0e7ff;
+    margin-top: -12px;
+    margin-bottom: 40px;
+}
+
+/* GLASS CARD */
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(18px);
+    border-radius: 26px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    animation: fadeUp .6s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card h2 {
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+/* SEARCH BAR */
+.glass-search {
+    background: var(--glass);
+    backdrop-filter: blur(18px);
+    border-radius: 999px;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: var(--shadow);
+    margin: 24px 0;
+}
+
+.glass-search input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-badge {
+    background: #e0e7ff;
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+/* TABLE */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+th {
+    background: #f1f5ff;
+    padding: 16px;
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--primary);
+}
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover {
+    background: #f8fafc;
+}
+
+/* FLOATING BUTTON */
+.fab {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: .7rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    transition: .3s ease;
+}
+
+.fab:hover {
+    transform: scale(1.15) translateY(-10px);
+}
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Items Stock Reports 📊</h1>
+    <p class="subtitle">
+        Track restocks, item updates, and inventory movement in real time 🚀
+    </p>
+
+    <div class="card">
+        <h2><i class="fas fa-boxes-stacked"></i> Item Restock History 🧾</h2>
+        <p>
+            See when items were updated, how much was added, and the current stock level 📦
+        </p>
+        <!-- DOWNLOAD BUTTON -->
+
+        <button 
+    onclick="downloadFilteredStockCSV()"
+    style="
+        margin-bottom:16px;
+        border:none;
+        padding:12px 22px;
+        border-radius:14px;
+        font-weight:700;
+        background:linear-gradient(135deg,#6366f1,#22d3ee);
+        color:white;
+        cursor:pointer;
+        box-shadow:0 12px 25px rgba(99,102,241,.45);
+    "
+>
+    <i class="fas fa-file-csv"></i> Download Filtered CSV
+</button>
+
+        <!-- SEARCH -->
+        <!-- <div class="glass-search">
+            <i class="fas fa-search"></i>
+            <input 
+                type="text" 
+                id="stockSearch" 
+                placeholder="Search for an item (e.g. Keyboard, Python Book…) 🔍"
+                onkeyup="filterStockLogs()"
+            >
+            <span class="search-badge" id="stockMatchCount">All items</span>
+        </div> -->
+        <div class="glass-search-bar" style="gap:12px; flex-wrap:wrap;">
+    <i class="fas fa-magnifying-glass search-icon"></i>
+
+    <input 
+        type="text"
+        id="stockSearch"
+        placeholder="Search item name…"
+        onkeyup="filterStockLogs()"
+    >
+
+    <input 
+        type="date"
+        id="fromDate"
+        onchange="filterStockLogs()"
+        title="From date"
+    >
+
+    <input 
+        type="date"
+        id="toDate"
+        onchange="filterStockLogs()"
+        title="To date"
+    >
+
+    <span class="search-badge" id="stockMatchCount">All items</span>
+</div>
+
+
+        <!-- TABLE -->
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date Updated</th>
+                        <th>Item Name</th>
+                        <th>Old Stock</th>
+                        <th>Added</th>
+                        <th>New Total</th>
+                    </tr>
+                </thead>
+                <tbody id="stockLogBody">
+                    <tr>
+                        <td colspan="5" style="text-align:center; padding:30px;">
+                            Loading stock history… ⏳
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<a href="home.html" class="fab">
+    <i class="fas fa-home fa-lg"></i>
+    HOME
+</a>
+
+<script>
+async function loadStockLogs() {
+    const tbody = document.getElementById('stockLogBody');
+
+    try {
+        const response = await fetch(
+            'http://localhost/inventory_app/api/endpoints/get_logs.php'
+        );
+        const logs = await response.json();
+
+        if (!Array.isArray(logs) || logs.length === 0) {
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="5" style="text-align:center; padding:30px;">
+                        No stock updates yet 💤
+                    </td>
+                </tr>
+            `;
+            return;
+        }
+
+        tbody.innerHTML = logs.map(log => `
+            <tr>
+                <td>${log.update_date}</td>
+                <td><strong>${log.name}</strong></td>
+                <td>${log.old_quantity}</td>
+                <td style="color:#2563eb; font-weight:700;">
+                    +${log.quantity_added} 📈
+                </td>
+                <td><strong>${log.new_quantity}</strong> 📦</td>
+            </tr>
+        `).join('');
+
+    } catch (err) {
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="5" style="text-align:center;">
+                    Failed to load stock history ❌
+                </td>
+            </tr>
+        `;
+    }
+}
+
+function filterStockLogs() {
+    const filter = document.getElementById('stockSearch').value.toLowerCase();
+    const fromDate = document.getElementById('fromDate').value;
+    const toDate = document.getElementById('toDate').value;
+
+    const rows = document.querySelectorAll('#stockLogBody tr');
+    let matches = 0;
+
+     rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length === 0) return;
+
+        const dateText = cells[0].textContent.trim(); // Date Updated column
+        const itemName = cells[1].textContent.toLowerCase();
+        const rowDate = new Date(dateText);
+
+        let matchText = itemName.includes(filter);
+        let matchFrom = fromDate ? rowDate >= new Date(fromDate) : true;
+        let matchTo = toDate ? rowDate <= new Date(toDate + 'T23:59:59') : true;
+         if (matchText && matchFrom && matchTo) {
+            row.style.display = '';
+            matches++;
+        } else {
+            row.style.display = 'none';
+        }
+    });
+
+    const badge = document.getElementById('stockMatchCount');
+    if (!filter) {
+        badge.innerText = 'All items';
+        badge.style.background = '#e0e7ff';
+        badge.style.color = 'var(--primary)';
+    } else {
+        badge.innerText = `${matches} match${matches !== 1 ? 's' : ''}`;
+        badge.style.background = '#e1ffed';
+        badge.style.color = '#16a34a';
+    }
+    document.querySelector('button[onclick="downloadFilteredStockCSV()"]')
+    .disabled = matches === 0;
+}
+
+loadStockLogs();
+</script>
+<script>
+    function downloadFilteredStockCSV() {
+    const rows = document.querySelectorAll('#stockLogBody tr');
+    let csv = [];
+    
+    // CSV Header
+    csv.push([
+        'Date Updated',
+        'Item Name',
+        'Old Stock',
+        'Quantity Added',
+        'New Total Stock'
+    ].join(','));
+
+    let hasData = false;
+
+    rows.forEach(row => {
+        // Skip hidden rows (filtered out)
+        if (row.style.display === 'none') return;
+
+        const cells = row.querySelectorAll('td');
+        if (cells.length === 0) return;
+
+        hasData = true;
+
+        const rowData = Array.from(cells).map(cell =>
+            `"${cell.textContent.trim().replace(/"/g, '""')}"`
+        );
+
+        csv.push(rowData.join(','));
+    });
+
+    if (!hasData) {
+        alert('No filtered data to download');
+        return;
+    }
+
+    const blob = new Blob([csv.join('\n')], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'filtered_stock_logs.csv';
+    document.body.appendChild(a);
+    a.click();
+
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+</script>
+
+</body>
+</html>

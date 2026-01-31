@@ -1,0 +1,717 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Financial Report</title>
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --light-blue: #eff6ff;
+            --border-color: #d1d5db;
+            --success-green: #10b981;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .report-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-top: 8px solid var(--primary-blue);
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Filter Bar Styling */
+        .filter-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background: var(--light-blue);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #bfdbfe;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        select, input {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-generate {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            align-self: flex-end;
+        }
+
+        .btn-generate:hover {
+            background-color: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+
+        .btn-generate:active {
+            transform: translateY(0);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: white;
+            text-align: left;
+            padding: 15px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #334155;
+        }
+
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        .grand-total-row {
+            background-color: #f8fafc;
+            font-size: 1.1rem;
+        }
+
+        .total-amount {
+            color: var(--success-green);
+            font-weight: 800;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .filter-bar { grid-template-columns: 1fr; }
+        }
+
+        .back-btn {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-blue);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.65rem;
+    font-weight: 800;
+    border: 4px solid white;
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* 👇 this is the key part */
+    position: fixed;
+    right: 1400px;
+    bottom: 20px;
+    z-index: 999;
+}
+
+        
+        .back-btn:hover {
+            transform: scale(1.15) translateY(-10px);
+            background: #00c6ff;
+        }
+        .btn-download {
+    background-color: #059669; /* Green color */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-end;
+}
+
+.btn-download:hover {
+    background-color: #047857;
+    transform: translateY(-2px);
+}
+.balance-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    .card {
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .accrued { background: #1e3a8a; } /* Blue */
+    .paid { background: #059669; }    /* Green */
+    .debt { background: #dc2626; }    /* Red */
+    .card h3 { margin: 0; font-size: 0.8rem; text-transform: uppercase; opacity: 0.9; }
+    .card p { margin: 10px 0 0; font-size: 1.5rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="report-container">
+    <h2>📊 Department Financial Summary</h2>
+    
+    <div class="filter-bar">
+        <div class="filter-group">
+            <label>Department</label>
+            <select id="deptSelect">
+                <option value="">-- Loading Departments --</option>
+            </select>
+        </div>
+        
+        <div class="filter-group">
+            <label>Start Date</label>
+            <input type="date" id="startDate">
+        </div>
+        
+        <div class="filter-group">
+            <label>End Date</label>
+            <input type="date" id="endDate">
+        </div>
+        
+        <!-- <button class="btn-generate" onclick="generateReport()">
+            Generate Report
+        </button> -->
+    <!-- </div>
+
+    <table id="reportTable">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Receiver</th>
+                <th>Status</th>
+                <th style="text-align: right;">Total Cost</th>
+            </tr>
+        </thead>
+        <tbody id="reportData">
+            <tr>
+                <td colspan="5" style="text-align: center; color: #94a3b8; padding: 40px;">
+                    Select filters and click generate to see data.
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="grand-total-row">
+                <td colspan="4" style="text-align: right; font-weight: bold;">Grand Total:</td>
+                <td style="text-align: right;" class="total-amount" id="grandTotal">$0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div>
+    <button class="back-btn" onclick="window.location.href='total_sales.html'">
+            ← Back
+        </button>
+</div>
+
+<div class="filter-bar">
+    <button class="btn-generate" onclick="generateReport()">
+        Generate Report
+    </button>
+
+    <button id="downloadBtn" class="btn-download" onclick="downloadCSV()" style="display:none;">
+        📥 Download CSV
+    </button>
+</div> --> -- IGNORE --
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Department Financial Report</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #6366f1;
+    --secondary: #22d3ee;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --text: #0f172a;
+    --muted: #64748b;
+    --glass: rgba(255,255,255,.78);
+    --border: rgba(255,255,255,.4);
+    --radius: 18px;
+    --shadow: 0 30px 70px rgba(0,0,0,.15);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 35px;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #6366f1, #22d3ee, #818cf8, #38bdf8);
+    background-size: 400% 400%;
+    animation: gradientMove 14s ease infinite;
+    color: var(--text);
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.report-container {
+    max-width: 1100px;
+    margin: auto;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    animation: fadeUp .6s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    font-weight: 800;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* FILTER BAR */
+.filter-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    background: rgba(255,255,255,.9);
+    padding: 22px;
+    border-radius: 14px;
+    margin: 25px 0;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+select, input {
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: #fff;
+    font-size: .95rem;
+    transition: .25s ease;
+}
+
+select:focus, input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(99,102,241,.35);
+}
+
+/* BUTTONS */
+.btn-generate,
+.btn-download {
+    border: none;
+    border-radius: 14px;
+    padding: 14px 26px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.btn-generate {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff;
+    box-shadow: 0 14px 30px rgba(99,102,241,.45);
+}
+
+.btn-generate:hover {
+    transform: translateY(-3px);
+}
+
+.btn-download {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+    color: #fff;
+}
+
+.btn-download:hover {
+    transform: translateY(-3px);
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+thead {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+}
+
+th {
+    font-size: .8rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+tbody tr {
+    transition: .25s ease;
+}
+
+tbody tr:hover {
+    background: rgba(99,102,241,.08);
+    transform: scale(1.01);
+}
+
+.item-row td {
+    font-size: .9rem;
+    color: #475569;
+}
+
+/* TOTAL ROW */
+.grand-total-row {
+    background: rgba(255,255,255,.7);
+}
+
+.total-amount {
+    color: var(--success);
+    font-weight: 800;
+}
+
+/* BACK BUTTON */
+.back-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0,0,0,.35);
+    transition: .3s ease;
+}
+
+.back-btn:hover {
+    transform: scale(1.15) translateY(-10px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body { padding: 18px; }
+    .filter-bar { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="report-container">
+    <h2>📊 Department Financial Summary</h2>
+
+    <div class="filter-bar">
+        <div class="filter-group">
+            <label>Department</label>
+            <select id="deptSelect"></select>
+        </div>
+
+        <div class="filter-group">
+            <label>Start Date</label>
+            <input type="date" id="startDate">
+        </div>
+
+        <div class="filter-group">
+            <label>End Date</label>
+            <input type="date" id="endDate">
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Order</th>
+                <th>Date</th>
+                <th>Receiver</th>
+                <th>Status</th>
+                <th style="text-align:right;">Cost</th>
+            </tr>
+        </thead>
+        <tbody id="reportData">
+            <tr>
+                <td colspan="5" style="text-align:center; padding:40px; color:#94a3b8;">
+                    Select filters and generate report
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="grand-total-row">
+                <td colspan="4" style="text-align:right;">Grand Total</td>
+                <td class="total-amount" style="text-align:right;" id="grandTotal">$0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<div class="filter-bar" style="max-width:1100px;margin:30px auto;">
+    <button class="btn-generate" onclick="generateReport()">Generate Report</button>
+    <button id="downloadBtn" class="btn-download" onclick="downloadCSV()" style="display:none;">
+        📥 Download CSV
+    </button>
+</div>
+
+<button class="back-btn" onclick="window.location.href='total_sales.html'">←</button>
+
+<!-- ✅ YOUR EXISTING JS LOGIC (UNCHANGED) -->
+
+
+
+<script>
+   
+       document.addEventListener('DOMContentLoaded', async () => {
+    const select = document.getElementById('deptSelect');
+    if (!select) return;
+
+    try {
+        const response = await fetch('http://localhost/inventory_app/api/endpoints/reports.php?resource=get_departments');
+        const departments = await response.json();
+
+        select.innerHTML = '<option value="">-- Select Department --</option>';
+
+        departments.forEach(dept => {
+            const opt = document.createElement('option');
+            opt.value = dept.department_id;
+            opt.textContent = dept.department_name;
+            select.appendChild(opt);
+        });
+    } catch (e) {
+        select.innerHTML = '<option>Error loading departments</option>';
+    }
+});
+
+
+    // 2. Generate Report Function
+let currentReportData = [];
+
+    async function generateReport() {
+        const deptId = document.getElementById('deptSelect').value;
+        const start = document.getElementById('startDate').value;
+        const end = document.getElementById('endDate').value;
+        const tbody = document.getElementById('reportData');
+        const totalDisplay = document.getElementById('grandTotal');
+
+        if (!deptId || !start || !end) {
+            alert("Please fill in all filters.");
+            return;
+        }
+
+        // Show loading state
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Processing Report...</td></tr>';
+
+        try {
+            //const response = await fetch(`http://localhost/inventory_app/api/endpoints/reports.php?dept_id=${deptId}&start_date=${start}&end_date=${end}`);
+            //const response = await fetch('http://localhost/inventory_app/api/endpoints/reports.php?resource=get_departments');
+            const response = await fetch(`http://localhost/inventory_app/api/endpoints/reports.php?resource=get_department_financial_report&dept_id=${deptId}&start_date=${start}&end_date=${end}`);
+            const result = await response.json();
+
+            if (result.data && result.data.length > 0) {
+                currentReportData = result.data; // Store data for download
+                document.getElementById('downloadBtn').style.display = 'inline-block'; // Show download button
+                let grandTotal = 0;
+                tbody.innerHTML = '';
+
+                result.data.forEach(order => {
+                    const orderCost = parseFloat(order.total_order_cost);
+                    grandTotal += orderCost;
+
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>#${order.order_id}</td>
+                            <td>${new Date(order.order_timestamp).toLocaleDateString()}</td>
+                            <td>${order.receiver_name}</td>
+                            <td><span style="color:green; font-size:0.8rem; font-weight:bold;">COMPLETED</span></td>
+                            <td style="text-align: right; font-weight: bold;">$${orderCost.toFixed(2)}</td>
+                        </tr>
+                    `;
+                    /////////////////////////////////////////////////////////////////////////
+                    order.items.forEach(item => {
+                tbody.innerHTML += `
+                    <tr class="item-row">
+                        <td colspan="3" style="padding-left:40px;">
+                            $${item.name} (x${item.quantity})
+                        </td>
+                        <td>$${parseFloat(item.item_cost).toFixed(2)}</td>
+                        <td style="text-align:right;">
+                            $${parseFloat(item.total_cost).toFixed(2)}
+                        </td>
+                    </tr>
+                `;
+            });
+
+            // Divider
+            tbody.innerHTML += `
+                <tr><td colspan="5"><hr></td></tr>
+            `;
+                });
+
+                totalDisplay.innerText = `$${grandTotal.toFixed(2)}`;
+             } //else {
+            //     tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No orders found for this criteria.</td></tr>';
+            //     totalDisplay.innerText = "$0.00";
+            // }
+            else {
+            currentReportData = [];
+            document.getElementById('downloadBtn').style.display = 'none'; // Hide if no data
+            // ... handle empty table ...
+        }
+        } catch (error) {
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; color:red;">System Error. Check Console.</td></tr>';
+        }
+    }
+
+function downloadCSV() {
+    // 1. Check if we have data (using your currentReportData variable)
+    if (!currentReportData || currentReportData.length === 0) {
+        alert("No data available to download.");
+        return;
+    }
+
+    // 2. Define Headers (Including Order info AND Item info)
+    let csvContent = "Order ID,Timestamp,Receiver,Vendor,Item Name,Quantity,Unit Cost,Item Total,Grand Total\n";
+
+    // 3. The Double Loop (Flattening the nested data)
+    currentReportData.forEach(order => {
+        // We look inside each order for the 'items' array
+        order.items.forEach(item => {
+            const row = [
+                order.order_id,
+                `"${order.order_timestamp}"`,
+                `"${order.receiver_name}"`,
+                `"${order.vendor_name || 'N/A'}"`,
+                `"${item.name}"`,          // Item detail
+                item.quantity,            // Item detail
+                item.item_cost,           // Item detail
+                item.total_cost,          // Item total (Qty * Cost)
+                order.total_order_cost    // Total for the whole order
+            ].join(",");
+            csvContent += row + "\n";
+        });
+    });
+
+    // 4. Create and Trigger the Download
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    
+    // Create a nice filename with today's date
+    const date = new Date().toISOString().split('T')[0];
+    link.setAttribute("href", url);
+    link.setAttribute("download", `Full_Financial_Report_${date}.csv`);
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+async function updateBalanceDisplay(deptId, start, end) {
+    try {
+        const response = await fetch(`http://localhost/inventory_app/api/endpoints/reports.php?resource=balance&dept_id=${deptId}&start_date=${start}&end_date=${end}`);
+        const data = await response.json();
+
+        // Populate the cards
+        document.getElementById('totalAccrued').innerText = `$${data.accrued.toFixed(2)}`;
+        document.getElementById('totalPaid').innerText = `$${data.paid.toFixed(2)}`;
+        
+        const balanceElement = document.getElementById('totalBalance');
+        balanceElement.innerText = `$${data.balance.toFixed(2)}`;
+
+        // Visual Feedback: If they owe money, make it red. If cleared, make it green.
+        balanceElement.style.color = data.balance > 0 ? "#ffcccc" : "#ccffcc";
+        
+    } catch (error) {
+        console.error("Balance calculation failed", error);
+    }
+}
+</script>
+
+</body>
+</html>

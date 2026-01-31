@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Specific login styling */
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h1 {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Store Inventory Management</h1>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" value=" " required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" value="" required>
+            </div>
+            <button type="submit" style="width: 100%;">Log In</button>
+        </form>
+        <p id="message"></p>
+    </div>
+    <script src="../js/app.js"></script>
+</body>
+</html>
