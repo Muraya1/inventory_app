@@ -429,7 +429,7 @@ async function handleOrderSubmission(event) {
     // NEW FIELDS
     const vendorName = document.getElementById('vendorName').value.trim();
     //const departmentName = document.getElementById('departmentName').value.trim();
-    const departmentName = document.getElementById('orderDepartment').value;
+    const departmentName = document.getElementById('deptSelect').value;
     const placeOrderButton = document.getElementById('placeOrderButton');
     
     const cart = getCart(); 
@@ -458,7 +458,7 @@ async function handleOrderSubmission(event) {
                 user_id: userId,
                 receiver_name: receiverName,
                 vendor_name: vendorName,          // <-- NEW
-                department_name: departmentName,  // <-- NEW
+                department_id: departmentName,  // <-- NEW
                 items: cart
                 // user_id is omitted here, assumed to be read from the JWT on the server
             })
@@ -607,7 +607,7 @@ async function fetchAndDisplayOrderHistory() {
                     <td>${order.vendor_name}</td>
                     <td><ul class="item-list">${itemListHtml}</ul></td>
                     <td><strong>${formattedTotal}</strong></td>
-                    <td><span style="color: green; font-weight: bold;">${order.status}</span></td>
+                    <td><span style="color: green; font-weight: bold;">${order.to_status}</span></td>
                     
                 `;
                 tbody.appendChild(row);
@@ -1442,7 +1442,7 @@ async function fetchDepartmentsForOrder() {
         console.error("Error loading departments:", error);
     }
 }
-fetchDepartmentsForOrder();
+
 //Call this when the checkout page/modal opens
 //document.addEventListener('DOMContentLoaded', fetchDepartmentsForOrder);
 

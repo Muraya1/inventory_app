@@ -26,8 +26,29 @@ $pdo = getConnection();
 // 4. Read Input
 // --------------------------------------------------
 $input = json_decode(file_get_contents("php://input"), true);
+//check user existence first
+try {
+    $checkSql = "SELECT COUNT(*) FROM users WHERE username = :username";
+    $checkStmt = $pdo->prepare($checkSql);
+    $checkStmt->execute([':username' => $input['username']]);
+    $userExists = $checkStmt->fetchColumn() > 0;
 
+    if ($userExists) {
+        http_response_code(409);
+        echo json_encode([
+            "message" => "Username already exists"
+        ]);
+        exit;
+    }
+} catch (PDOException $e) {
+    http_response_code(500);
+    echo json_encode([
+        "message" => "Database error"
+    ]);
+    exit;
+}
 if (
+    
     empty($input['username']) ||
     empty($input['password']) ||
     empty($input['role'])

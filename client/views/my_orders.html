@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Inventory System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .order-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            border-left: 6px solid #cbd5e0;
+        }
+        .order-card.pending { border-left-color: #f6ad55; }
+        .order-card.approved { border-left-color: #48bb78; }
+        .order-card.rejected { border-left-color: #f56565; }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .status-pill {
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .status-pill.pending { background: #fffaf0; color: #9c4221; }
+        .status-pill.approved { background: #f0fff4; color: #22543d; }
+        .status-pill.rejected { background: #fff5f5; color: #822727; }
+
+        .rejection-box {
+            background: #fff5f5;
+            border: 1px solid #feb2b2;
+            color: #c53030;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .items-list {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary { background: #4c51bf; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>My Order History</h1>
+            <a href="home.html" class="btn btn-primary">New Order</a>
+        </div>
+        <div id="ordersList">
+            <!-- Orders will be loaded here -->
+        </div>
+    </div>
+
+    <script>
+        async function loadMyOrder() {
+            const container = document.getElementById('ordersList');
+            container.innerHTML = '<p>Loading your orders...</p>';
+            
+            try {
+                // Note: You'll need an endpoint that returns orders for the logged-in user
+                const response = await fetch('../api/endpoints/orders.php?action=my_orders');
+                const data = await response.json();
+                
+                if (data.length === 0) {
+                    container.innerHTML = '<p>No orders found.</p>';
+                    return;
+                }
+
+                container.innerHTML = data.map(order => `
+                    <div class="order-card ${order.order_status.toLowerCase()}">
+                        <div class="order-header">
+                            <div>
+                                <strong>Order #${order.order_id}</strong>
+                                <div style="font-size: 12px; color: #718096;">${order.order_timestamp}</div>
+                            </div>
+                            <span class="status-pill ${order.order_status.toLowerCase()}">${order.order_status}</span>
+                        </div>
+                        <div class="items-list">
+                            <strong>Items:</strong>
+                            ${order.items ? order.items.map(item => `
+                                <div class="item-row">
+                                    <span>${item.name} x ${item.quantity}</span>
+                                    <span>KSh ${item.unit_price}</span>
+                                </div>
+                            `).join('') : 'No items listed'}
+                        </div>
+                        ${order.order_status === 'REJECTED' ? `
+                            <div class="rejection-box">
+                                <strong>Reason for Rejection:</strong><br>
+                                ${order.rejection_reason || 'No reason provided.'}
+                            </div>
+                        ` : ''}
+                        ${order.order_status === 'APPROVED' ? `
+                            <div style="margin-top: 10px; color: #2f855a; font-size: 13px;">
+                                ✓ Approved by Admin on ${order.approved_at}
+                            </div>
+                        ` : ''}
+                    </div>
+                `).join('');
+            } catch (e) {
+                container.innerHTML = '<p>Error loading orders. Please try again.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadMyOrders);
+    </script>
+    <script>
+    const API_BASE = 'http://localhost/inventory_app/api/endpoints';
+
+    async function loadMyOrders() {
+        const container = document.getElementById('ordersList');
+        container.innerHTML = '<p>Loading your orders...</p>';
+        
+        try {
+            const response = await fetch(`${API_BASE}/my_orders.php`, {
+                method: 'GET',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to fetch orders');
+            }
+
+            const data = await response.json();
+            
+            if (!data || data.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #718096;">
+                        <div style="font-size: 48px; margin-bottom: 20px;">📦</div>
+                        <h3>No Orders Yet</h3>
+                        <p>You haven't placed any orders yet.</p>
+                        <a href="cart.html" class="btn btn-primary" style="margin-top: 20px;">Place Your First Order</a>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = data.map(order => `
+                <div class="order-card ${order.order_status.toLowerCase()}">
+                    <div class="order-header">
+                        <div>
+                            <strong>Order #${order.order_id}</strong>
+                            <div style="font-size: 12px; color: #718096;">
+                                ${new Date(order.order_timestamp).toLocaleString('en-US', {
+                                    month: 'short',
+                                    day: 'numeric',
+                                    year: 'numeric',
+                                    hour: '2-digit',
+                                    minute: '2-digit'
+                                })}
+                            </div>
+                            <div style="font-size: 12px; color: #718096; margin-top: 5px;">
+                                📦 ${order.receiver_name} | 🏢 ${order.vendor_name}
+                            </div>
+                        </div>
+                        <span class="status-pill ${order.order_status.toLowerCase()}">${order.order_status}</span>
+                    </div>
+                    <div class="items-list">
+                        <strong>Items:</strong>
+                        ${order.items && order.items.length > 0 ? order.items.map(item => `
+                            <div class="item-row">
+                                <span>${item.name} x ${item.quantity} ${item.measuring_unit || ''}</span>
+                                <span>KSh ${parseFloat(item.unit_price).toFixed(2)}</span>
+                            </div>
+                        `).join('') : '<p>No items listed</p>'}
+                        <div style="text-align: right; margin-top: 10px; padding-top: 10px; border-top: 2px solid #e2e8f0;">
+                            <strong>Total: KSh ${parseFloat(order.total_amount || 0).toFixed(2)}</strong>
+                        </div>
+                    </div>
+                    ${order.order_status === 'REJECTED' ? `
+                        <div class="rejection-box">
+                            <strong>❌ Reason for Rejection:</strong><br>
+                            ${order.rejection_reason || 'No reason provided.'}
+                        </div>
+                    ` : ''}
+                    ${order.order_status === 'APPROVED' ? `
+                        <div style="margin-top: 10px; color: #2f855a; font-size: 13px; background: #f0fff4; padding: 10px; border-radius: 6px;">
+                            ✓ Approved by ${order.approved_by_username || 'Admin'} on ${new Date(order.approved_at).toLocaleString()}
+                        </div>
+                    ` : ''}
+                    ${order.order_status === 'PENDING' ? `
+                        <div style="margin-top: 10px; color: #9c4221; font-size: 13px; background: #fffaf0; padding: 10px; border-radius: 6px;">
+                            ⏳ Waiting for admin approval...
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        } catch (e) {
+            console.error('Error loading orders:', e);
+            container.innerHTML = `
+                <div style="text-align: center; padding: 40px; color: #e53e3e;">
+                    <div style="font-size: 48px; margin-bottom: 20px;">⚠️</div>
+                    <h3>Error Loading Orders</h3>
+                    <p>${e.message}</p>
+                    <button onclick="loadMyOrders()" class="btn btn-primary" style="margin-top: 20px;">Try Again</button>
+                </div>
+            `;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadMyOrders);
+</script>
+</body>
+</html>

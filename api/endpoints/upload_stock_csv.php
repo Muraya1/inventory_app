@@ -30,6 +30,9 @@ try {
         $stockToAdd = intval($data[3]); // ADD_NEW_STOCK
         $itemCost   = floatval($data[4]); // NEW_ITEM_COST
 
+
+
+
         if ($itemId <= 0 || $stockToAdd <= 0) {
             continue; // Skip invalid or empty rows
         }
@@ -38,6 +41,11 @@ try {
         $stmt = $conn->prepare("SELECT stock_level FROM Items WHERE item_id = ?");
         $stmt->execute([$itemId]);
         $currentStock = $stmt->fetchColumn();
+
+        //////////////////////////////////////////
+
+
+
 
         if ($currentStock === false) continue;
 
@@ -53,7 +61,7 @@ try {
 
         // 3️⃣ Log stock update
         $logStmt = $conn->prepare("
-            INSERT INTO stock_logs 
+            INSERT INTO inventory_logs 
             (item_id, old_quantity, quantity_added, new_quantity, update_date)
             VALUES (?, ?, ?, ?, NOW())
         ");
@@ -63,9 +71,27 @@ try {
             $stockToAdd,
             $newStock
         ]);
+        $restockStmt = $conn->prepare("
+    INSERT INTO inventory_restocks 
+    (item_id, quantity_added, unit_cost, admin_name, source_file)
+    VALUES (?, ?, ?, ?, ?)
+");
+
+$restockStmt->execute([
+    $itemId,
+    $stockToAdd,
+    $itemCost,
+    'Admin', // You can pull this from your session: $_SESSION['username']
+    $_FILES['csv_file']['name'] // Records which file triggered this restock
+]);
     }
 
     $conn->commit();
+    
+    // sendResponse(200, [
+    //         "success" => true,
+    //         "message" => "Stock updated successfully via CSV."
+    //     ]);
 
     header("Location: /inventory_app/client/views/bulk.html?upload=success");
     exit;

@@ -609,7 +609,7 @@ let currentReportData = [];
                             <td>#${order.order_id}</td>
                             <td>${new Date(order.order_timestamp).toLocaleDateString()}</td>
                             <td>${order.receiver_name}</td>
-                            <td><span style="color:green; font-size:0.8rem; font-weight:bold;">COMPLETED</span></td>
+                            <td><span style="color:green; font-size:0.8rem; font-weight:bold;">${order.to_status}</span></td>
                             <td style="text-align: right; font-weight: bold;">$${orderCost.toFixed(2)}</td>
                         </tr>
                     `;

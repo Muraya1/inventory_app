@@ -1,4 +1,6 @@
 <?php
+
+
 header('Content-Type: application/json');
 include_once '../config/database.php';
 
@@ -7,15 +9,15 @@ $conn = getConnection();
 try {
     $stmt = $conn->prepare("
         SELECT 
-            l.id,
-            l.update_date,
-            i.name,
+            l.item_id,
+            l.restock_date,
+            l.admin_name,
             l.old_quantity,
             l.quantity_added,
             l.new_quantity
-        FROM inventory_logs l
+        FROM inventory_restocks l
         JOIN items i ON l.item_id = i.item_id
-        ORDER BY l.update_date DESC
+        ORDER BY l.restock_date DESC
     ");
 
     $stmt->execute();

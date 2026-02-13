@@ -52,14 +52,18 @@ function getDepartmentFinancialReport() {
         $sql = "SELECT 
                     o.order_id, 
                     o.order_timestamp, 
-                    o.receiver_name, 
+                    o.receiver_name,
+                    a.to_status, 
                     o.vendor_name,
                     SUM(oi.quantity * oi.unit_price) AS total_order_cost
                 FROM orders o
+                JOIN order_audit_history a ON o.order_id = a.order_id
+                
                 JOIN order_items oi ON o.order_id = oi.order_id
                 JOIN items i ON oi.item_id = i.item_id
                 WHERE o.department_id = :dept_id 
                   AND DATE(o.order_timestamp) BETWEEN :start AND :end
+                  AND a.to_status != 'PENDING'
                 GROUP BY o.order_id
                 ORDER BY o.order_timestamp DESC";
 
@@ -156,12 +160,23 @@ function getDepartmentBalance() {
 function add_department() {
     $conn = getConnection();
     $data = json_decode(file_get_contents(filename: "php://input"), true);
-
+    ////check for department existence in the database before inserting
     if (!isset($data['department_name'])) {
         sendResponse(400, ["message" => "Missing department name."]);
     }
 
     $department_name = $data['department_name'];
+
+    // Check if department already exists
+    $checkSql = "SELECT COUNT(*) FROM departments WHERE department_name = :department_name";
+    $checkStmt = $conn->prepare($checkSql);
+    $checkStmt->execute([':department_name' => $department_name]);
+    $exists = $checkStmt->fetchColumn() > 0;
+
+    if ($exists) {
+        sendResponse(409, ["message" => "Department already exists."]);
+        return;
+    }
 
     $sql = "INSERT INTO departments (department_name) VALUES (:department_name)";
 
@@ -172,8 +187,8 @@ function add_department() {
 
         sendResponse(201, ["message" => "Department added successfully."]);
     } catch (PDOException $e) {
-        //sendResponse(500, ["message" => "Database error: " . $e->getMessage()]);
-        sendResponse(500, ["message" => "THE DEPARTMENT NAME ALREADY EXISTS."]);
+        sendResponse(500, ["message" => "Database error: " . $e->getMessage()]);
+        //sendResponse(500, ["message" => "THE DEPARTMENT NAME ALREADY EXISTS."]);
     }
 }
 function fetchOrderbyDate() {
