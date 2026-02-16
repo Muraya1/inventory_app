@@ -371,10 +371,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
  */
 function createOrder() {
     //$user = requireAuth();
-    $userId = 1; // TEMPORARY HARDCODED USER FOR TESTING
+    //$userId = 1; // TEMPORARY HARDCODED USER FOR TESTING
     //$userId = $user['user_id'];
     $conn = getConnection();
     $data = json_decode(file_get_contents("php://input"));
+
+    if (isset($data->user_id)) {
+        $userId = (int)$data->user_id;
+    } else {
+        sendResponse(400, ["message" => "Missing user_id in request body."]);
+        return;
+    }
 
     if (
         empty($data->receiver_name) ||
@@ -385,6 +392,7 @@ function createOrder() {
         sendResponse(400, ["message" => "Missing required order data."]);
         return;
     }
+    $userId = (int)$userId;
     $receiverName = trim($data->receiver_name);
     $vendorName = trim($data->vendor_name);
     $departmentId = (int)$data->department_id;

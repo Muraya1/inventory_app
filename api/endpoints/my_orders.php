@@ -23,8 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
+$data = json_decode(file_get_contents("php://input"), true);
 function getMyOrders()
 {
+    $userId = $data['user_id'] ?? null ; // Get user_id from request body (if sent)   
     // Get logged in user (from session)
 
     // If you don’t want middleware, you can read $_SESSION directly.
@@ -37,6 +39,7 @@ function getMyOrders()
         $sql = "
             SELECT 
                 o.order_id,
+                o.user_id,
                 o.receiver_name,
                 o.vendor_name,
                 o.order_timestamp,

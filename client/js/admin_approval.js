@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     checkAdminAuth();
     loadOrders();
     setupFilterButtons();
-    setupAutoRefresh();
+    //setupAutoRefresh();
 });
 
 /**
@@ -24,14 +24,14 @@ function checkAdminAuth() {
     if (userRole !== 'admin') {
         showAlert('Access Denied. Admin privileges required.', 'error');
         setTimeout(() => {
-            window.location.href = 'home.html';
-        }, 20000);
+            window.location.href = 'total_sales.html';
+        }, 2000); // Redirect after 20 seconds
     }
 }
 
 /**
  * Load all pending orders
- */
+ */ 
 async function loadOrders() {
     try {
         showLoading();
@@ -407,11 +407,11 @@ function refreshOrders() {
 /**
  * Setup auto-refresh every 30 seconds
  */
-function setupAutoRefresh() {
-    setInterval(() => {
-        loadOrders();
-    }, 300000); // 30 seconds
-}
+// function setupAutoRefresh() {
+//     setInterval(() => {
+//         loadOrders();
+//     }, 300000); // 30 seconds
+// }
 
 /**
  * Show loading state

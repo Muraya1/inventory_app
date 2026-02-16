@@ -107,13 +107,18 @@ const handleLogin = async (event) => {
 
         const data = await response.json();
 
-        if (response.ok && data.token) {
+        // if (response.ok && data.token) {
+        if (response.ok) {
 
-            localStorage.setItem('auth_token', data.token);
-            localStorage.setItem('user_id', data.user_id);
-            localStorage.setItem('user_role', data.role);
-            localStorage.setItem('username', data.username);
-            localStorage.setItem('item_id', data.item);
+            //localStorage.setItem('auth_token', data.token);
+            localStorage.setItem('user_id', data.user.user_id);
+            localStorage.setItem('user_role', data.user.role);
+            localStorage.setItem('username', data.user.username);
+            //localStorage.setItem('item_id', data.item);
+            sessionStorage.setItem('user_id', data.user.user_id);
+            sessionStorage.setItem('username', data.user.username);
+            sessionStorage.setItem('user_role', data.user.role);
+            //sessionStorage.setItem('PHPSESSID', data.session_id); // Store the session ID for API calls
 
             messageElement.textContent = 'Login successful! Redirecting...';
             messageElement.style.color = 'green';
@@ -181,8 +186,9 @@ function selectCategory(categoryId, categoryName) {
 
 async function fetchAndDisplayCategories() {
     //localStorage.setItem("current_category_id", selectedCategoryId);
-    const authToken = localStorage.getItem('auth_token');
-    if (!authToken) {
+    //const authToken = localStorage.getItem('auth_token');
+        const user = localStorage.getItem('username');
+    if (!user) {
         window.location.href = 'login.html';
         return;
     }
@@ -195,9 +201,9 @@ async function fetchAndDisplayCategories() {
     try {
         const response = await fetch(API_DATA_URL, {
             method: 'GET',
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${authToken}`
             }
         });
 
@@ -229,7 +235,7 @@ async function fetchAndDisplayCategories() {
 const itemsPerPage = 10;
 
 async function loadMoreOrders() {
-    const authToken = localStorage.getItem('auth_token');
+    //const authToken = localStorage.getItem('auth_token');
     const tbody = document.getElementById('orderHistoryBody');
     const loadMoreBtn = document.getElementById('loadMoreBtn');
 
@@ -292,7 +298,8 @@ async function loadMoreOrders() {
 }
 async function fetchAndDisplayItems(page = 1) {
     // --- 1. Setup & Validation ---
-    const authToken = localStorage.getItem('auth_token');
+    //const sessionToken = sessionStorage.getItem('PHPSESSID');
+    const userId = sessionStorage.getItem('user_id');
     const categoryId = sessionStorage.getItem('category_id');
     const categoryName = sessionStorage.getItem('category_name');
     
@@ -301,7 +308,7 @@ async function fetchAndDisplayItems(page = 1) {
     
     const limit = ITEMS_PER_PAGE; 
 
-    if (!categoryId || !authToken || !listContainer) {
+    if (!categoryId || !listContainer || !userId) {
         window.location.href = 'categories.html'; 
         return;
     }
@@ -313,7 +320,7 @@ async function fetchAndDisplayItems(page = 1) {
     try {
         const response = await fetch(`${API_ITEMS_URL}&category_id=${categoryId}&limit=${limit}&page=${currentPage}`, {
             method: 'GET',
-            headers: { 'Authorization': `Bearer ${authToken}` }
+            headers: { 'Authorization': `Bearer ${''}` }
         });
         
         const responseObj = await response.json(); 
@@ -423,6 +430,7 @@ async function handleOrderSubmission(event) {
     event.preventDefault(); 
     const messageElement = document.getElementById('orderMessage');
     const userId = localStorage.getItem('user_id');
+    const username = localStorage.getItem('username');
     // Existing fields
     const receiverName = document.getElementById('receiverName').value.trim();
     
@@ -433,14 +441,14 @@ async function handleOrderSubmission(event) {
     const placeOrderButton = document.getElementById('placeOrderButton');
     
     const cart = getCart(); 
-    const authToken = localStorage.getItem('auth_token');
+    //const authToken = localStorage.getItem('auth_token');
     // NOTE: user_id is often better retrieved on the server side from the JWT/token payload
 
     messageElement.textContent = 'Processing order...';
     placeOrderButton.disabled = true;
 
     // Enhance validation check
-    if (cart.length === 0 || !receiverName || !vendorName || !departmentName || !authToken) {
+    if (cart.length === 0 || !receiverName || !vendorName || !departmentName || !userId) {
         messageElement.textContent = 'Error: All fields (Receiver, Vendor, Department) and cart items are required.';
         placeOrderButton.disabled = false;
         return;
@@ -451,10 +459,11 @@ async function handleOrderSubmission(event) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${authToken}`
+                //'Authorization': `Bearer ${authToken}`
             },
             body: JSON.stringify({
                 // Pass existing and new fields
+                username: username,              // <-- NEW: Include username for better order tracking
                 user_id: userId,
                 receiver_name: receiverName,
                 vendor_name: vendorName,          // <-- NEW

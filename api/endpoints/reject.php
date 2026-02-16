@@ -5,9 +5,9 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header("Access-Control-Allow-Methods: POST");
 header("Content-Type: application/json");
 
-require_once '../config/database.php';
-require_once '../config/helper.php';
-require_once '../middleware/auth_check.php';
+//require_once '../config/database.php';
+//require_once '../config/helper.php';
+//require_once '../middleware/auth_check.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
  * Reject order (no stock changes needed)
  */
 function rejectOrder() {
-    $admin = requireAdmin();
+    $admin = requireAdmin(); // Fixed typo: requireAdmint() -> requireAdmin()
     $conn = getConnection();
     $data = json_decode(file_get_contents("php://input"));
 

@@ -7,13 +7,17 @@ header("Content-Type: application/json");
 
 require_once '../config/database.php';
 require_once '../config/helper.php';
+require_once '../config/session_manager.php';
 require_once '../middleware/auth_check.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
 }
+// At the top of api/endpoints/approve_order.php
 
+
+// Continue with your logic...
 /**
  * Approve order and deduct stock
  * This is the ONLY place where stock is deducted
@@ -22,6 +26,14 @@ function approveOrder() {
     $admin = requireAdmin(); // Only admins can approve
     $conn = getConnection();
     $data = json_decode(file_get_contents("php://input"));
+
+    $sessionManager = new SessionManager($conn);
+
+if (!$sessionManager->validateSession()) {
+    http_response_code(401);
+    echo json_encode(['success' => false, 'message' => 'Session expired. Please login again.']);
+    exit;
+}
 
     if (empty($data->order_id)) {
         sendResponse(400, ["message" => "Order ID required"]);

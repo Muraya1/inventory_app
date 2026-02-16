@@ -96,7 +96,7 @@
         </div>
     </div>
 
-    <script>
+    <!-- <script>
         async function loadMyOrder() {
             const container = document.getElementById('ordersList');
             container.innerHTML = '<p>Loading your orders...</p>';
@@ -147,17 +147,18 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', loadMyOrders);
-    </script>
+        //document.addEventListener('DOMContentLoaded', loadMyOrders);
+    </script> -->
     <script>
     const API_BASE = 'http://localhost/inventory_app/api/endpoints';
 
     async function loadMyOrders() {
         const container = document.getElementById('ordersList');
         container.innerHTML = '<p>Loading your orders...</p>';
+        const userId = sessionStorage.getItem('user_id');
         
         try {
-            const response = await fetch(`${API_BASE}/my_orders.php`, {
+            const response = await fetch(`${API_BASE}/my_orders.php?user_id=${userId}`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
