@@ -24,7 +24,9 @@ fputcsv($output, [
     'item_name',
     'current_stock',
     'ADD_NEW_STOCK',
-    'NEW_ITEM_COST'
+    'NEW_ITEM_COST',
+    'SUPPLIER_NAME (OPTIONAL)',
+    'SUPPLIER_INVOICE_NUMBER'
 ]);
 
 // Data rows

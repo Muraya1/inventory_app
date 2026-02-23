@@ -1,16 +1,20 @@
 <?php
+///// Session Manager Class - Handles User Sessions and Authentication
+
+
 /**
  * Simple Session Manager - Uses PHP's Native Sessions
  * File: api/config/session_manager.php
  */
 require_once __DIR__ . '/database.php';
 class SessionManager {
-    
     private $conn;
+    private $now;
     private $session_lifetime = 3600; // 1 hour
     
     public function __construct($db_connection) {
         $this->conn = $db_connection;
+        $this->now = time();
         $this->startSecureSession();
         //session_start();
     }
@@ -39,6 +43,7 @@ class SessionManager {
         try {
             // Regenerate session ID to prevent fixation attacks
             session_regenerate_id(true);
+            date_default_timezone_set('Africa/Nairobi');
             
             // Get PHP's session ID
             $session_id = session_id();
@@ -48,7 +53,7 @@ class SessionManager {
             $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
             
             // Calculate expiry
-            $expires_at = date('Y-m-d H:i:s', time() + $this->session_lifetime);
+            $expires_at = date('Y-m-d H:i:s', $this->now + $this->session_lifetime);
             
             // Store session in database
             $stmt = $this->conn->prepare(
@@ -301,4 +306,3 @@ class SessionManager {
         }
     }
 }
-?>

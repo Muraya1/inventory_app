@@ -1,376 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Management Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Preview</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; display: flex; height: 100vh; }
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        .sidebar {
+            width: 240px;
+            background: #1a1a2e;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0; left: 0;
+            overflow-y: auto;
+            z-index: 100;
+        }
 
-<style>
-:root {
-    --primary: #6366f1;
-    --secondary: #22d3ee;
-    --dark: #0f172a;
-    --glass: rgba(255,255,255,.75);
-    --border: rgba(255,255,255,.35);
-    --sidebar-width: 270px;
-    --shadow: 0 25px 60px rgba(0,0,0,.15);
-}
+        .sidebar-header {
+            padding: 24px 20px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-* { box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        .sidebar-header i {
+            font-size: 1.3rem;
+            color: #4361ee;
+        }
 
-body {
-    margin: 0;
-    display: flex;
-    min-height: 100vh;
-    background: linear-gradient(-45deg, #6366f1, #22d3ee, #818cf8, #38bdf8);
-    background-size: 400% 400%;
-    animation: bgFlow 14s ease infinite;
-}
+        .sidebar-header span {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-@keyframes bgFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        /* Section Labels */
+        .nav-section-label {
+            padding: 16px 20px 6px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
 
-/* SIDEBAR */
-.sidebar {
-    width: var(--sidebar-width);
-    background: rgba(15,23,42,.92);
-    backdrop-filter: blur(16px);
-    color: white;
-    position: fixed;
-    height: 100vh;
-    padding: 20px 0;
-    box-shadow: 6px 0 25px rgba(0,0,0,.35);
-}
+        .nav-list {
+            list-style: none;
+            padding: 8px 0;
+            flex: 1;
+        }
 
-.sidebar-header {
-    padding: 0 24px 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1.3rem;
-    font-weight: 800;
-}
+        .nav-item { width: 100%; }
 
-.sidebar-header i {
-    color: var(--secondary);
-}
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 20px;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
 
-.nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+        .nav-link i {
+            width: 18px;
+            text-align: center;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
 
-.nav-item {
-    margin: 6px 14px;
-}
+        .nav-link:hover {
+            background: rgba(255,255,255,0.06);
+            color: #fff;
+            border-left-color: rgba(67,97,238,0.5);
+        }
 
-.nav-link {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 18px;
-    border-radius: 14px;
-    color: rgba(255,255,255,.75);
-    text-decoration: none;
-    transition: .3s ease;
-}
+        .nav-link.active {
+            background: rgba(67,97,238,0.15);
+            color: #fff;
+            border-left-color: #4361ee;
+            font-weight: 600;
+        }
 
-.nav-link i {
-    width: 22px;
-    font-size: 1.1rem;
-}
+        .nav-link.active i { color: #4361ee; }
 
-.nav-link:hover {
-    background: rgba(99,102,241,.18);
-    color: #fff;
-    transform: translateX(6px);
-}
+        /* Divider */
+        .nav-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.07);
+            margin: 8px 16px;
+        }
 
-.nav-link.active {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: #fff;
-    box-shadow: 0 12px 25px rgba(99,102,241,.45);
-}
+        /* Bottom logout */
+        .sidebar-footer {
+            padding: 12px 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
 
-/* MAIN CONTENT */
-.main-content {
-    margin-left: var(--sidebar-width);
-    width: calc(100% - var(--sidebar-width));
-    padding: 28px;
-}
+        .nav-link.danger:hover {
+            background: rgba(230,57,70,0.12);
+            color: #e63946;
+            border-left-color: #e63946;
+        }
 
-/* TOP BAR */
-.top-bar {
-    background: var(--glass);
-    backdrop-filter: blur(16px);
-    border-radius: 18px;
-    padding: 18px 24px;
-    box-shadow: var(--shadow);
-    margin-bottom: 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .nav-link.danger:hover i { color: #e63946; }
 
-/* STAT CARDS */
-.stat-card {
-    background: var(--glass);
-    backdrop-filter: blur(16px);
-    border-radius: 18px;
-    padding: 24px;
-    box-shadow: var(--shadow);
-    transition: .35s ease;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.stat-card:hover {
-    transform: translateY(-8px) scale(1.02);
-}
-
-.stat-icon {
-    width: 55px;
-    height: 55px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.4rem;
-}
-
-.icon-primary { background: linear-gradient(135deg, #6366f1, #818cf8); }
-.icon-info { background: linear-gradient(135deg, #0ea5e9, #38bdf8); }
-.icon-success { background: linear-gradient(135deg, #22c55e, #4ade80); }
-
-.stat-card small {
-    color: #475569;
-    font-weight: 600;
-}
-
-.stat-card h2 {
-    margin: 6px 0 0;
-    font-weight: 800;
-}
-
-
-/* WELCOME */
-.welcome {
-    background: var(--glass);
-    backdrop-filter: blur(18px);
-    border-radius: 22px;
-    padding: 60px 30px;
-    box-shadow: var(--shadow);
-    text-align: center;
-    margin-top: 40px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .sidebar {
-        transform: translateX(-100%);
-    }
-    .main-content {
-        margin-left: 0;
-        width: 100%;
-    }
-}
-.alert-dot {
-  width: 10px;
-  height: 10px;
-  background: red;
-  border-radius: 50%;
-  display: inline-block;
-  margin-left: 6px;
-}
-
-.hidden {
-  display: none;
-}
-</style>
+        /* Scrollbar */
+        .sidebar::-webkit-scrollbar { width: 4px; }
+        .sidebar::-webkit-scrollbar-track { background: transparent; }
+        .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+    </style>
 </head>
-
 <body>
 
-<!-- SIDEBAR -->
 <nav class="sidebar">
     <div class="sidebar-header">
         <i class="fas fa-chart-line"></i>
-        <span>RECORDS</span>
+        <span>Records</span>
     </div>
 
-
     <ul class="nav-list">
+
+        <!-- Main -->
+        <li><span class="nav-section-label">Main</span></li>
+
+        <li class="nav-item">
+            <a href="home.html" class="nav-link">
+                <i class="fas fa-home"></i> Dashboard
+            </a>
+        </li>
+
+        <div class="nav-divider"></div>
+
+        <!-- Finance -->
+        <li><span class="nav-section-label">Finance</span></li>
+
         <li class="nav-item">
             <a href="financial.html" class="nav-link active">
                 <i class="fas fa-cash-register"></i> Sales
             </a>
         </li>
         <li class="nav-item">
+            <a href="pay.html" class="nav-link">
+                <i class="fas fa-credit-card"></i> Make Payment
+            </a>
+        </li>
+
+        <div class="nav-divider"></div>
+
+        <!-- Orders -->
+        <li><span class="nav-section-label">Orders</span></li>
+
+        <li class="nav-item">
             <a href="order_history.html" class="nav-link">
                 <i class="fas fa-history"></i> Order Record
             </a>
         </li>
         <li class="nav-item">
-            <a href="reports.html" class="nav-link">
-                <i class="fas fa-file-invoice-dollar"></i> Item Reports
+            <a href="my_orders.html" class="nav-link">
+                <i class="fas fa-box"></i> My Orders
             </a>
         </li>
-        
         <li class="nav-item">
-            <a href="pay.html" class="nav-link">
-                <i class="fas fa-credit-card"></i> Make Payment
+            <a href="admin_approvals.html" class="nav-link">
+                <i class="fas fa-check-circle"></i> Approvals
+            </a>
+        </li>
+
+        <div class="nav-divider"></div>
+
+        <!-- Reports -->
+        <li><span class="nav-section-label">Reports</span></li>
+
+        <li class="nav-item">
+            <a href="item_history.html" class="nav-link">
+                <i class="fas fa-file-invoice-dollar"></i> Item Reports
             </a>
         </li>
         <li class="nav-item">
             <a href="low_stock_alert.html" class="nav-link">
-                <i class="fas fa-credit-card"></i> LOW STOCK ITEMS
+                <i class="fas fa-exclamation-triangle"></i> Low Stock Alerts
             </a>
         </li>
+
+        <div class="nav-divider"></div>
+
+        <!-- Admin -->
+        <li><span class="nav-section-label">Admin</span></li>
+
         <li class="nav-item">
             <a href="admin_setup.html" class="nav-link">
-                <i class="fas fa-credit-card"></i> Admin Setup
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="home.html" class="nav-link ">
-                <i class="fas fa-home fa-lg mb-1"></i>
-                 Dashboard
-            </a>
-        </li>
-         <li class="nav-item">
-            <a href="my_orders.html" class="nav-link">
-                <i class="fas fa-credit-card"></i> my Orders
-            </a>
-        </li>
-         <li class="nav-item">
-            <a href="admin_approvals.html" class="nav-link">
-                <i class="fas fa-credit-card"></i> Make Approvals
+                <i class="fas fa-cog"></i> Admin Setup
             </a>
         </li>
 
     </ul>
+
+    <!-- Footer -->
+    <div class="sidebar-footer">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#" onclick="logout(event)" class="nav-link danger">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
-<!-- MAIN -->
-<div class="main-content">
-
-    <div class="top-bar">
-        <h4 class="mb-0 fw-bold">Overview</h4>
-        <i class="fas fa-user-circle fa-2x text-secondary"></i>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="stat-card">
-                    <div class="stat-icon icon-primary">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div>
-                        <small>Total Orders</small>
-                        <h2>1,284</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div style="margin-top:40px;">
-    <h2>Item Order Graph</h2>
-    <canvas id="orderFrequencyChart" height="120"></canvas>
-</div>
-
-        <!-- <div class="welcome">
-            <h3 class="fw-bold">Welcome to the Management Portal</h3>
-            <p class="text-muted mt-2">
-                Use the sidebar to navigate reports, payments, and sales data.
-            </p>
-        </div> -->
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../js/app.js"></script>
-    <script src="../js/reports.js"></script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-
-<!-- 2. Your function -->
 <script>
-function renderOrderFrequencyChart(orders) {
-    const itemTotals = {};
+function logout(event) {
+    //event.preventDefault(); // stop link navigation
 
-    orders.forEach(order => {
-        order.items.forEach(item => {
-            itemTotals[item.name] = (itemTotals[item.name] || 0) + item.quantity;
-        });
+    // Clear all client-side state
+    localStorage.clear();
+    sessionStorage.clear();
+
+    document.cookie.split(';').forEach(cookie => {
+        const name = cookie.split('=')[0].trim();
+
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${location.hostname}`;
     });
-    
 
-    const sortedData = Object.entries(itemTotals)
-        .map(([name, quantity]) => ({ name, quantity }))
-        .sort((a, b) => b.quantity - a.quantity);
-
-    const labels = sortedData.map(i => i.name);
-    const data = sortedData.map(i => i.quantity);
-
-    const ctx = document.getElementById('orderFrequencyChart').getContext('2d');
-
-    if (window.myOrderChart) window.myOrderChart.destroy();
-
-    window.myOrderChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels,
-            datasets: [{
-                data,
-                backgroundColor: 'rgba(30,136,229,.6)',
-                borderColor: 'rgba(30,136,229,1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            indexAxis: 'y',
-            responsive: true,
-            plugins: {
-                legend: { display: false },
-                title: {
-                    display: true,
-                    text: 'Top Ordered Items by Total Quantity'
-                }
-            },
-            scales: {
-                x: { beginAtZero: true }
-            }
-        }
-    });
+    // Redirect to login
+    window.location.href = 'login.html';
 }
-</script>
-
-<!-- 3. Call it -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const orders = JSON.parse(localStorage.getItem('orders')) || [];
-    renderOrderFrequencyChart(orders);
-});
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // This triggers your existing fetch function
-        if(typeof fetchAndDisplayOrderHistory === "function") {
-            fetchAndDisplayOrderHistory();
-        }
-    });
 </script>
 
 </body>

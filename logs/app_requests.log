@@ -5029,3 +5029,2259 @@ RESPONSE:
 [2026-02-15 17:05:05] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
 REQUEST : EMPTY/GET
 RESPONSE: 
+------------------------------------------
+[2026-02-16 19:51:15] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 19:51:18] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 19:51:21] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 19:51:23] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 19:51:25] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:05:59] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:06:10] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:06:16] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:20:51] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:20:53] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:20:53] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:21:18] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:21:19] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:21:20] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:21:27] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:21:28] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:21:32] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:25:13] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:27:42] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:29:49] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:29:50] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:45:46] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:45:47] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:47:23] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:47:24] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:47:57] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:48:16] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:50:30] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:50:44] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:50:46] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:51:11] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:51:12] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:51:13] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:51:33] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 20:51:34] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:03:55] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:04:06] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:06:09] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:06:10] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:06:35] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:06:52] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:07:39] ::1 | GET: /inventory_app/api/endpoints/pending_orders.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:08:07] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:08:43] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:09:49] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:09:49] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:09:49] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:09:49] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:10:01] ::1 | GET: /inventory_app/api/endpoints/pending_orders.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:10:07] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:10:14] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:11:31] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:12:20] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:12:52] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:13:11] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:13:34] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:17:41] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-16 21:17:53] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:07:41] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:08:44] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:08:45] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:08:45] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:08:45] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:08:56] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:10:56] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:23:13] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:23:17] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:23:17] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:23:18] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:23:40] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:23:40] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:23:41] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:24:24] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:25:19] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:25:20] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:25:20] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:25:20] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:26:28] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:27:41] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:27:42] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:27:44] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:29:25] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:29:26] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:44:14] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:44:19] ::1 | GET: /inventory_app/api/config/session_manager.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:45:19] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:57:39] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 10:58:20] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:01:50] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:03:52] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:03:53] ::1 | POST: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : {"action":"check_session"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:11:15] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:11:16] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:12:57] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:12:59] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:13:28] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:13:29] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:14:18] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:14:19] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:24:11] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:24:12] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:27:55] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:27:56] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:29:03] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:29:04] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:29:57] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:29:58] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:30:47] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:30:48] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:31:22] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:31:23] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:36:27] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:36:28] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:48:51] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:48:52] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:54:50] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:54:51] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:56:14] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 11:56:15] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 12:00:25] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 12:00:26] ::1 | GET: /inventory_app/api/config/session_manager.php?resource=session_status
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 12:12:36] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 12:14:51] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 12:15:20] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 12:15:20] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 12:15:20] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 12:15:21] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 17:39:53] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 17:39:54] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 17:44:35] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 17:45:07] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 17:48:52] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 17:49:04] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 17:50:13] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 17:55:55] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 17:56:17] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 17:59:55] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:07:41] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:08:45] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:08:55] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:14:35] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:15:37] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:18:15] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:22:30] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:33:27] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"john","password":"john"}
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:34:22] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:34:45] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:46:27] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:46:43] ::1 | GET: /inventory_app/api/endpoints/export_csv_stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-17 20:53:35] ::1 | GET: /inventory_app/api/endpoints/export_csv_stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 17:14:32] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-18 17:33:50] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 17:33:55] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 17:34:05] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 17:54:35] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 17:54:38] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=9&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 18:06:36] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:04:35] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:04:37] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:04:43] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:04:58] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:05:33] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:07:19] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:07:22] ::1 | GET: /inventory_app/api/endpoints/export_csv_stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:10:02] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:13:10] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:26:04] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:27:37] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:27:53] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:28:05] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:35:39] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:35:43] ::1 | GET: /inventory_app/api/endpoints/export_csv_stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:35:59] ::1 | GET: /inventory_app/api/endpoints/export_csv_stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 19:41:34] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 20:02:43] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 20:08:51] ::1 | POST: /inventory_app/api/endpoints/upload_stock_csv.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 20:32:42] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 20:33:21] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 20:33:23] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 20:33:27] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 20:40:33] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 20:41:00] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 20:41:07] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 20:44:41] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 21:35:01] ::1 | POST: /inventory_app/api/endpoints/project.php
+REQUEST : {"project_name":"TEST PROJECT"}
+RESPONSE: 
+------------------------------------------
+[2026-02-18 21:43:05] ::1 | POST: /inventory_app/api/endpoints/project.php
+REQUEST : {"project_name":"TEST PROJECT"}
+RESPONSE: 
+------------------------------------------
+[2026-02-18 21:43:06] ::1 | POST: /inventory_app/api/endpoints/project.php
+REQUEST : {"project_name":"TEST PROJECT"}
+RESPONSE: 
+------------------------------------------
+[2026-02-18 21:43:10] ::1 | POST: /inventory_app/api/endpoints/project.php
+REQUEST : {"project_name":"TEST PROJECT"}
+RESPONSE: 
+------------------------------------------
+[2026-02-18 21:43:43] ::1 | POST: /inventory_app/api/endpoints/project.php
+REQUEST : {"project_name":"TEST PROJECT"}
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:00:06] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:00:08] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=9&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:00:12] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:00:16] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=9&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:00:25] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:00:45] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:06:39] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:08:25] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:08:25] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:12:30] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:12:30] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:12:32] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:12:32] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:12:43] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:12:43] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:19:00] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:19:00] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:19:07] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:19:07] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:20:33] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:20:34] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:20:35] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:20:35] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:20:42] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+: EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:21:25] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:21:25] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:21:42] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:21:42] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:27:03] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","vendor_name":"daniel","department_id":"2","items":[{"item_id":90,"name":"Cybersecurity Basics","quantity":80}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:51:53] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:51:59] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:52:08] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:52:08] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:52:20] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","vendor_name":"daniel","department_id":"1","project_id":"undefined","items":[{"item_id":92,"name":"Gaming Mouse","quantity":10}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:54:14] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:54:16] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:54:24] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+: EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:54:33] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","vendor_name":"daniel","department_id":"1","project_id":"","items":[{"item_id":92,"name":"Gaming Mouse","quantity":10}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:57:13] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:57:15] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:57:25] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:57:25] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-18 22:57:32] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","vendor_name":"daniel","department_id":"1","project_id":"","items":[{"item_id":92,"name":"Gaming Mouse","quantity":10}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:25:48] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:25:52] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:25:59] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:26:30] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:26:30] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:27:04] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:27:07] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:27:10] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=9&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:27:13] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:27:13] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:27:42] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=9&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:27:46] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 17:27:51] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=5&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 20:24:54] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 20:24:54] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 20:25:06] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 20:25:06] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 20:25:56] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-19 20:26:02] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","vendor_name":"daniel","department_id":"","project_name":"","items":[{"item_id":100,"name":"new20","quantity":20}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-19 20:26:15] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","vendor_name":"daniel","department_id":"","project_name":"","items":[{"item_id":100,"name":"new20","quantity":20}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-19 20:27:17] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","vendor_name":"daniel","department_id":"","project_name":"","items":[{"item_id":100,"name":"new20","quantity":20}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 08:57:07] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:17:49] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:20:55] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:21:04] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:21:04] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:23:47] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","vendor_name":"daniel","department_id":"","project_name":"","items":[{"item_id":92,"name":"Gaming Mouse","quantity":10}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:25:50] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:25:57] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:25:57] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:26:05] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:26:05] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:26:14] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:26:14] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:26:24] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":{},"vendor_name":"daniel","department_id":"","project_name":"","items":[{"item_id":92,"name":"Gaming Mouse","quantity":10}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:26:32] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:26:32] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:26:33] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:26:33] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:26:38] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":{},"vendor_name":"daniel","department_id":"","project_name":"","items":[{"item_id":92,"name":"Gaming Mouse","quantity":10}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:29:07] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":{},"vendor_name":"daniel","department_id":"","project_name":"","items":[{"item_id":92,"name":"Gaming Mouse","quantity":10}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:29:07] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":{},"vendor_name":"daniel","department_id":"","project_name":"","items":[{"item_id":92,"name":"Gaming Mouse","quantity":10}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:29:09] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:29:09] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:29:18] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","vendor_name":"daniel","department_id":"","project_name":"","items":[{"item_id":92,"name":"Gaming Mouse","quantity":10}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:32:46] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:32:47] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:32:55] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:32:55] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:39:42] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:39:42] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:39:43] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:39:43] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:41:00] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:41:00] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:41:03] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:41:03] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:41:03] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:41:03] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:41:10] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:41:10] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:43:35] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:43:36] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:44:03] ::1 | POST: /inventory_app/api/endpoints/project.php
+REQUEST : {"project_name":"TEST PROJECT"}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:45:52] ::1 | POST: /inventory_app/api/endpoints/project.php
+REQUEST : {"project_name":"TEST 1","project_number":"1"}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:47:26] ::1 | POST: /inventory_app/api/endpoints/project.php
+REQUEST : {"project_name":"TEST 1","project_number":"1"}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:48:05] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:48:08] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:48:19] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:48:19] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:48:31] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:48:31] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:49:12] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","project_name":"1","vendor_name":"daniel","department_id":"","items":[{"item_id":92,"name":"Gaming Mouse","quantity":8}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:50:50] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:50:51] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:50:59] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+: EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:51:08] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","project_id":"1","vendor_name":"daniel","department_id":"","items":[{"item_id":92,"name":"Gaming Mouse","quantity":9}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:56:42] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:56:42] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 09:56:48] ::1 | POST: /inventory_app/api/endpoints/orders.php
+REQUEST : {"username":"admin","user_id":"1","receiver_name":"daniel","project_id":"1","vendor_name":"daniel","department_id":"","items":[{"item_id":92,"name":"Gaming Mouse","quantity":9}]}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:08:52] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:17:30] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:17:32] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:17:33] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:17:39] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:19:47] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:20:20] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:27:10] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:27:34] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:27:44] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:37:59] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:40:18] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:41:20] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:42:40] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:52:26] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:53:03] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-20 10:53:19] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:15:41] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:15:46] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:16:13] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:16:29] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:19:48] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:19:48] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:21:47] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:21:49] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:21:52] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=2&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:21:56] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=3&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:21:59] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=4&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:28:04] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:28:06] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=9&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:35:01] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:35:01] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:37:54] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:37:54] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:38:11] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:38:11] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 18:39:13] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:42:08] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:42:11] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:49:57] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:49:57] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:50:04] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:50:04] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:50:06] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:50:06] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:50:10] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:50:15] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:50:15] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:50:15] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:50:27] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:50:40] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:50:40] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:51:15] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:52:30] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:52:30] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:56:02] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:56:02] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:57:09] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:57:34] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:57:34] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:59:05] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:59:05] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:59:22] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 19:59:22] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:01:03] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=total_expenditure&start_date=4444-04-04&end_date=2026-02-02
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:01:05] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=total_expenditure&start_date=4444-04-04&end_date=2026-02-02
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:01:33] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:01:33] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:03:48] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:03:48] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:04:19] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:04:19] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:04:29] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:05:05] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:05:05] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:05:07] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:05:07] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:05:46] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:05:46] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:06:08] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:06:14] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:06:14] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:06:38] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:06:38] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:09:40] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:09:40] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:52] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:52] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:56] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:56] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:57] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:57] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:57] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:57] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:57] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:57] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:58] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:11:58] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:12:03] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:12:03] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:12:50] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:12:50] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:14:17] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:14:17] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:17:38] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:17:38] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:18:42] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:18:42] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:18:49] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:19:38] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:19:38] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:19:57] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:20:17] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:25:21] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:25:21] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:32:24] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_department_financial_report&dept_id=1&start_date=2026-02-18&end_date=2026-02-21
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:32:30] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_department_financial_report&dept_id=1&start_date=2026-02-01&end_date=2026-02-21
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:32:43] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:32:43] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:33:12] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:33:18] ::1 | GET: /inventory_app/api/endpoints/pay_logic.php?dept_id=4
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:33:24] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+: EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:33:30] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:33:34] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:40:04] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:40:06] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=9&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:41:08] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 20:41:26] ::1 | GET: /inventory_app/api/endpoints/get_logs.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:17:56] ::1 | GET: /inventory_app/api/endpoints/data.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:18:27] ::1 | GET: /inventory_app/api/endpoints/data.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:20:59] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:22:19] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:25:03] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:25:04] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:25:12] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:25:12] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:25:44] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:26:17] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=133
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:27:20] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:27:33] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:28:03] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:29:23] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:30:59] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:31:10] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:31:21] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:35:40] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:35:53] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:36:09] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:44:27] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 21:44:42] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:11:42] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:13:13] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:13:20] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:14:03] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:14:10] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:24:31] ::1 | GET: /inventory_app/api/endpoints/data.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:25:26] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:25:51] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:35:37] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:35:47] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:36:49] ::1 | GET: /inventory_app/api/endpoints/item_history.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:36:55] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:58:37] ::1 | GET: /inventory_app/api/endpoints/item_history.php?resource=items
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:58:42] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 22:58:58] ::1 | GET: /inventory_app/api/endpoints/item_history.php?resource=items
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:00:01] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:01:20] ::1 | GET: /inventory_app/api/endpoints/item_history.php?resource=items
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:01:25] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:07:15] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=76
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:12:47] ::1 | GET: /inventory_app/api/endpoints/item_history.php?resource=items
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:12:51] ::1 | GET: /inventory_app/api/endpoints/item_history.php?resource=items
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:13:02] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:13:26] ::1 | GET: /inventory_app/api/endpoints/item_history.php?resource=items
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:13:35] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:14:12] ::1 | GET: /inventory_app/api/endpoints/item_history.php?resource=items
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:14:20] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:19:09] ::1 | GET: /inventory_app/api/endpoints/item_history.php?resource=items
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:19:15] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:26:34] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:27:19] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:27:33] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:28:38] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:28:49] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=139
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:30:13] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=138
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:31:08] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=138
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:33:58] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=135
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:34:46] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:35:02] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=135
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:37:12] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:37:16] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=135
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:38:23] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:38:28] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=135
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:42:38] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:42:44] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=135
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:46:18] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:46:29] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=135
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:47:27] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=138
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:49:17] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:49:22] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=138
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:49:36] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:49:41] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=138
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:52:25] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=93
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-21 23:57:34] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=92
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:03:18] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:03:54] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:03:59] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=135
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:05:42] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=117
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:06:22] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:06:28] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=117
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:13:03] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:13:06] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:13:10] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:16:01] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:16:04] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:16:08] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:16:12] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:16:12] ::1 | GET: /inventory_app/api/endpoints/project.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:16:19] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:16:38] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:17:29] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=categories
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:17:51] ::1 | GET: /inventory_app/api/endpoints/data.php?resource=items&category_id=10&limit=50&page=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:18:25] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:18:42] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:18:47] ::1 | GET: /inventory_app/api/endpoints/item_history.php?item_id=135
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:18:55] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:18:55] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:19:47] ::1 | GET: /inventory_app/api/endpoints/my_orders.php?user_id=1
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:25:50] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:32:13] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=get_departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:32:17] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:32:17] ::1 | GET: /inventory_app/api/endpoints/orders.php?resource=history&page=1&limit=10
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:32:25] ::1 | GET: /inventory_app/api/endpoints/getitems.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:32:29] ::1 | GET: /inventory_app/api/endpoints/low-stock.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 09:32:53] ::1 | GET: /inventory_app/api/endpoints/pending_orders.php
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:10:02] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:12:32] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"john","password":"john"}
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:13:44] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"daniel","password":"dan"}
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:13:49] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"daniel","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:14:12] ::1 | POST: /inventory_app/api/endpoints/auth.php
+REQUEST : {"username":"admin","password":"12345"}
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:14:24] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:18:22] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:21:43] ::1 | POST: /inventory_app/api/endpoints/reports.php?resource=department_name
+REQUEST : {"department_name":"IT7"}
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:21:43] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:21:43] ::1 | GET: /inventory_app/api/endpoints/register.php?resource=list
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:21:43] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:21:43] ::1 | GET: /inventory_app/api/endpoints/project.php?resource=list
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:22:26] ::1 | POST: /inventory_app/api/endpoints/project.php
+REQUEST : {"project_name":"project7","project_number":"7","department_id":"","description":"best"}
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:22:26] ::1 | GET: /inventory_app/api/endpoints/register.php?resource=list
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:22:26] ::1 | GET: /inventory_app/api/endpoints/reports.php?resource=departments
+REQUEST : EMPTY/GET
+RESPONSE: 
+------------------------------------------
+[2026-02-22 10:22:26] ::1 | GET: /inventory_app/api/endpoints/project.php?resource=list
+REQUEST : EMPTY/GET
+RESPONSE: 

@@ -28,7 +28,10 @@ try {
 
         $itemId     = intval($data[0]);
         $stockToAdd = intval($data[3]); // ADD_NEW_STOCK
+        $oldstock   = intval($data[2]); // current_stock
         $itemCost   = floatval($data[4]); // NEW_ITEM_COST
+        $supplierName = $data[5] ?? 'Default Supplier'; // SUPPLIER_NAME (OPTIONAL)
+        $supplierInvoice = $data[6] ?? 'N/A'; // SUPPLIER_INVOICE_NUMBER
 
 
 
@@ -73,16 +76,19 @@ try {
         ]);
         $restockStmt = $conn->prepare("
     INSERT INTO inventory_restocks 
-    (item_id, quantity_added, unit_cost, admin_name, source_file)
-    VALUES (?, ?, ?, ?, ?)
+    (item_id, old_quantity, quantity_added, unit_cost, admin_name, source_file, supplier_name, supplier_invoice_number)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 ");
 
 $restockStmt->execute([
     $itemId,
+    $oldstock,
     $stockToAdd,
     $itemCost,
     'Admin', // You can pull this from your session: $_SESSION['username']
-    $_FILES['csv_file']['name'] // Records which file triggered this restock
+    $_FILES['csv_file']['name'], // Records which file triggered this restock
+    $supplierName,
+    $supplierInvoice
 ]);
     }
 

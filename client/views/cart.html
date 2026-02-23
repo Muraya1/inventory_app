@@ -33,29 +33,24 @@
                 <h2>Receiver Details</h2>
                 <div class="input-group">
                     <label for="receiverName">Receiver's Name:</label>
-                    <input type="text" id="receiverName" required placeholder="e.g., Daniel">
+                    <input type="text" id="receiverName"  placeholder="e.g., Daniel">
                 </div>
                 <div class="input-group">
-                        <label for="vendorName">Vendor Name (Required for Report)</label>
-                        <input type="text" class="form-control" id="vendorName" required placeholder="e.g., Daniel">
+                        <label for="vendorName">Vendor Name ( Required for Report)</label>
+                        <input type="text" class="form-control" id="vendorName" placeholder="e.g., Daniel">
                     </div>
 
-            <!-- <div class="form-group">
-                    <label for="departmentId">Department (Required for Reporting)</label>
-                    <select class="form-control" id="departmentId" required>
-                        <option value="">-- Loading Departments --</option>
-                    </select>
-                </div> -->
-                <!-- <div class="form-group">
-                    <label for="departmentName">Department Name (Required for Reporting)</label>
-                    <input type="text" class="form-control" id="departmentName" required>
-                </div> -->
-                                <div class="form-group">
-                    <label for="orderDepartment">Department:</label>
-                    <select id="deptSelect" required>
+                               <div class="form-group">
+                    <label for="deptSelect">Department:</label>
+                    <select id="deptSelect" >
                         <option value="">-- Select Department --</option>
                         </select>
                 </div>
+                <div class="form-group">
+                    <label for="projectSelect">Project (Optional):</label>
+                    <select id="projectSelect">
+                        <option value="">-- Select Project --</option>
+                    </select>
                 
                 <p id="orderMessage" class="error-message"></p>
                 
@@ -76,7 +71,37 @@
     const depts = await res.json();
     depts.forEach(d => deptSelect.innerHTML += `<option value="${d.department_id}">${d.department_name}</option>`);
 }
+//////////////// LOAD PROJECTS FOR DROPDOWN
+    async function loadprojects() {
+    const res = await fetch('http://localhost/inventory_app/api/endpoints/project.php',
+        {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+    );
+   const projects = await res.json();
+    const projectSelect = document.getElementById("projectSelect");
+    projects.forEach(p => projectSelect.innerHTML += `<option value="${p.project_number}">${p.project_name}</option>`);
+}
+loadprojects();
 loadDepts();
     </script>
+   <script>
+    // Add this at the top of your JavaScript files for protected pages
+async function checkSession() {
+    const clientsession = localStorage.getItem('user_id');
+    if (!clientsession) {
+        window.location.href = 'login.html';
+        return false;
+    }
+}
+
+// Call this when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    checkSession();
+});
+</script>
 </body>
 </html>

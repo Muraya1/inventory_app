@@ -214,12 +214,13 @@
         <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
-                <th>Order ID</th>
+                <!-- <th>Order ID</th>
                 <th>Date/Time</th>
                 <th>Receiver</th>
                 <th>Dept</th>
+                <th>Project</th>
                 <th>Vendor</th>
-                <th>Total Cost</th>
+                <th>Total Cost</th> -->
             </tr>
         </thead>
         <tbody id="reportTTableBody">
@@ -246,8 +247,8 @@
                     <th><i class="fas fa-hashtag me-2"></i>ID</th>
                     <th><i class="fas fa-calendar-alt me-2"></i>Date / Time</th>
                     <th><i class="fas fa-user-tie me-2"></i>Receiver</th>
-                    <th><i class="fas fa-building me-2"></i>Dept</th>
-                    <th><i class="fas fa-truck me-2"></i>Vendor</th>
+                    <th><i class="fas fa-building me-2"></i>Dept/Project</th>
+                    <!-- <th><i class="fas fa-project-diagram me-2"></i>Project</th> -->
                     <th><i class="fas fa-Boxes me-2"></i>items</th>
                     <th><i class="fas fa-dollar-sign me-2"></i>Order Cost</th>
                     <th><i class="fas fa-hashtag me-2"></i>status</th>
@@ -291,6 +292,22 @@
             fetchAndDisplayOrderHistory();
         }
     });
+</script>
+
+<script>
+    // Add this at the top of your JavaScript files for protected pages
+async function checkSession() {
+    const clientsession = localStorage.getItem('user_id');
+    if (!clientsession) {
+        window.location.href = 'login.html';
+        return false;
+    }
+}
+
+// Call this when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    checkSession();
+});
 </script>
 
 </body>

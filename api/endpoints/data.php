@@ -43,7 +43,8 @@ function fetchItems() {
     $sql = "SELECT 
                 item_id, 
                 name, 
-                stock_level, 
+                stock_level,
+                item_cost, 
                 category_id,
                 image_path,
                 date_created,

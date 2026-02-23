@@ -1,226 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>St. Andrew's Turi | Inventory Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --turi-blue: #002147;
-            --turi-gold: #C5A059;
-            --white: #ffffff;
-            --light-gray: #f4f7f6;
-            --text-dark: #333;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--light-gray);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Header Styling */
-        header {
-            background-color: var(--turi-blue);
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 4px solid var(--turi-gold);
-            color: white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--turi-gold);
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(rgba(0, 33, 71, 0.8), rgba(0, 33, 71, 0.8)), 
-                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
-            font-weight: 300;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Main Options Section */
-        .container {
-            max-width: 1100px;
-            margin: -50px auto 50px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 20px;
-        }
-
-        .option-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            border-top: 5px solid transparent;
-        }
-
-        .option-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-            border-top: 5px solid var(--turi-gold);
-        }
-
-        .icon {
-            font-size: 50px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .option-card h3 {
-            font-size: 1.6rem;
-            color: var(--turi-blue);
-            margin-bottom: 15px;
-        }
-
-        .option-card p {
-            color: #666;
-            margin-bottom: 25px;
-            font-size: 0.95rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .btn-sales {
-            background-color: var(--turi-blue);
-            color: white;
-        }
-
-        .btn-sales:hover {
-            background-color: #003366;
-        }
-
-        .btn-order {
-            background-color: var(--turi-gold);
-            color: var(--turi-blue);
-        }
-
-        .btn-order:hover {
-            background-color: #b38f4d;
-        }
-
-        /* Quick Stats Section */
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-item h4 {
-            font-size: 1.5rem;
-            color: var(--turi-blue);
-        }
-
-        .stat-item span {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: #888;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            font-size: 0.9rem;
-            color: #777;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo">
-            <h1>ST. ANDREW'S <span>TURI</span></h1>
-        </div>
-        <div class="user-info">
-            <span>Admin Portal v2.0</span>
-        </div>
-        <div class="user-info">
-            <a href="login.html" onclick="localStorage.clear()" >Logout</a>
-        </div>
-        
-    </header>
-
-    <section class="hero">
-        <h2>Store Inventory Management</h2>
-        <p>Effortlessly track stock, manage school sales, and restock supplies.</p>
-    </section>
-
-    <div class="container">
-        <div class="option-card" onclick="location.href='#sales'">
-            <span class="icon">📈</span>
-            <h3>Point of Sales</h3>
-            <p>Process new transactions, generate receipts, and update stock levels in real-time for students and staff.</p>
-            <a href="total_sales.html" class="btn btn-sales">Open Sales Terminal</a>
-        </div>
-
-        <div class="option-card" onclick="location.href='#orders'">
-            <span class="icon">📦</span>
-            <h3>Make Orders</h3>
-            <p>Running low? Place new supply orders, manage vendors, and track incoming shipments to the school store.</p>
-            <a href="categories.html" class="btn btn-order">Create New Order</a>
-        </div>
-    </div>
-
-    
-
-    <footer>
-        <p>&copy; 2026 St. Andrew's School, Turi. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -431,7 +208,8 @@ footer {
     </div>
     <div class="header-right">
         <span>v2.0</span>
-        <a href="login.html" onclick="localStorage.clear()">Logout</a>
+        <!-- <a href="login.html" onclick="localStorage.clear()">Logout</a> -->
+        <a  onclick="logout()" href="#">Logout</a>
     </div>
 </header>
 
@@ -459,6 +237,40 @@ footer {
 <footer>
     <p>&copy; 2026 St. Andrew's School, Turi. All Rights Reserved.</p>
 </footer>
+<script>
+    // Add this at the top of your JavaScript files for protected pages
+async function checkSession() {
+    const clientsession = localStorage.getItem('user_id');
+    if (!clientsession) {
+        window.location.href = 'login.html';
+        return false;
+    }
+}
+
+// Call this when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    checkSession();
+});
+</script>
+<script>
+function logout(event) {
+    //event.preventDefault(); // stop link navigation
+
+    // Clear all client-side state
+    localStorage.clear();
+    sessionStorage.clear();
+
+    document.cookie.split(';').forEach(cookie => {
+        const name = cookie.split('=')[0].trim();
+
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${location.hostname}`;
+    });
+
+    // Redirect to login
+    window.location.href = 'login.html';
+}
+</script>
 
 </body>
 </html>

@@ -106,9 +106,12 @@ const handleLogin = async (event) => {
         });
 
         const data = await response.json();
+        console.log('Login response:', data);
 
-        // if (response.ok && data.token) {
-        if (response.ok) {
+//if (response.ok && data.success && data.user) {
+
+         if (response.ok == true && data.success == true && data.user) {
+        //if (response.ok) {
 
             //localStorage.setItem('auth_token', data.token);
             localStorage.setItem('user_id', data.user.user_id);
@@ -244,7 +247,8 @@ async function loadMoreOrders() {
         const response = await fetch(`${API_ORDER_HISTORY_URL}&page=${currentPage}&limit=${itemsPerPage}`, {
         
             method: 'GET',
-            headers: { 'Authorization': `Bearer ${authToken}` }
+            credentials: 'include',
+            //headers: { 'Authorization': `Bearer ${localStorage.getItem('auth_token')}` }
         });
 
         const orders = await response.json();
@@ -268,8 +272,8 @@ async function loadMoreOrders() {
                     <td>${order.order_id}</td>
                     <td>${new Date(order.order_timestamp).toLocaleDateString()}</td>
                     <td>${order.receiver_name}</small></td>
-                    <td>${order.department_name}</td>
-                    <td>${order.vendor_name}</td>
+                    <td>${order.department_name || order.project_name }</td>
+                    <td>${order.project_name}</td>
                     <td><ul class="item-list">${itemListHtml}</ul></td>
                     <td><strong>${formattedTotal}</strong></td>
                     <td><span style="color: green; font-weight: bold;">${order.status}</span></td>
@@ -430,14 +434,11 @@ async function handleOrderSubmission(event) {
     event.preventDefault(); 
     const messageElement = document.getElementById('orderMessage');
     const userId = localStorage.getItem('user_id');
-    const username = localStorage.getItem('username');
-    // Existing fields
+    const username = localStorage.getItem('username');// Existing fields
     const receiverName = document.getElementById('receiverName').value.trim();
-    
-    // NEW FIELDS
     const vendorName = document.getElementById('vendorName').value.trim();
-    //const departmentName = document.getElementById('departmentName').value.trim();
     const departmentName = document.getElementById('deptSelect').value;
+    const projectID = document.getElementById('projectSelect').value; // Optional field
     const placeOrderButton = document.getElementById('placeOrderButton');
     
     const cart = getCart(); 
@@ -448,7 +449,7 @@ async function handleOrderSubmission(event) {
     placeOrderButton.disabled = true;
 
     // Enhance validation check
-    if (cart.length === 0 || !receiverName || !vendorName || !departmentName || !userId) {
+    if (cart.length === 0 || !receiverName || !vendorName || !userId) {
         messageElement.textContent = 'Error: All fields (Receiver, Vendor, Department) and cart items are required.';
         placeOrderButton.disabled = false;
         return;
@@ -466,8 +467,9 @@ async function handleOrderSubmission(event) {
                 username: username,              // <-- NEW: Include username for better order tracking
                 user_id: userId,
                 receiver_name: receiverName,
+                project_id: projectID, // <-- NEW
                 vendor_name: vendorName,          // <-- NEW
-                department_id: departmentName,  // <-- NEW
+                department_id: departmentName,
                 items: cart
                 // user_id is omitted here, assumed to be read from the JWT on the server
             })
@@ -561,12 +563,13 @@ const API_ORDER_HISTORY_URL = 'http://localhost/inventory_app/api/endpoints/orde
 async function fetchAndDisplayOrderHistory() {
     const authToken = localStorage.getItem('auth_token');
     const tbody = document.getElementById('orderHistoryBody');
+    const userId = localStorage.getItem('user_id') || sessionStorage.getItem('user_id');
     
     // Increased colspan to 8 to match the actual number of columns
     const colSpanCount = 8; 
     
-    if (!tbody || !authToken) {
-        if (tbody) tbody.innerHTML = `<tr><td colspan="${colSpanCount}">Authentication required.</td></tr>`;
+    if (!tbody || !userId) {
+        if (tbody) tbody.innerHTML = `<tr><td colspan="${colSpanCount}">Authentication required from client!!!.</td></tr>`;
         return;
     }
 
@@ -612,8 +615,7 @@ async function fetchAndDisplayOrderHistory() {
                     <td>${order.order_id}</td>
                     <td>${new Date(order.order_timestamp).toLocaleDateString()}</td>
                     <td>${order.receiver_name}</small></td>
-                    <td>${order.department_name}</td>
-                    <td>${order.vendor_name}</td>
+                    <td>${order.department_name || order.project_name}</td>
                     <td><ul class="item-list">${itemListHtml}</ul></td>
                     <td><strong>${formattedTotal}</strong></td>
                     <td><span style="color: green; font-weight: bold;">${order.to_status}</span></td>
@@ -1204,6 +1206,48 @@ function renderItemList(itemsToRender) {
 ////////////////////
                 row.className = "item-row";
 
+        // row.innerHTML = `
+        //     <!-- 1️⃣ Item name -->
+        //     <div style="display:flex; align-items:center; gap:10px;">
+        //         ${imageHtml}
+        //         <span class="item-name">${item.name}</span>
+        //     </div>
+
+        //     <!-- 2️⃣ Stock -->
+        //     <div>${item.stock_level}</div>
+
+        //     <!-- 3️⃣ Order qty -->
+        //     <input
+        //         type="number"
+        //         id="qty-${item.item_id}"
+        //         class="input-qty"
+        //         value="${currentQty}"
+        //         min="0"
+        //         max="${item.stock_level}"
+        //         step="0.1"
+        //         placeholder="0.0"
+        //     />
+
+        //     <!-- 4️⃣ ADD BUTTON  -->
+        //     <button onclick="
+        //                  const qty = document.getElementById('qty-${item.item_id}').value;
+        //                  addToCart(${item.item_id}, '${itemNameEscaped}', qty);"
+        //            >Add</button>
+
+        //     <!-- 5️⃣ MENU (⋮) -->
+        //     <div class="menu-wrapper">
+        //         <button class="menu-btn" onclick="toggleMenu(${item.item_id})"></button>
+
+        //         <div class="menu-dropdown" id="menu-${item.item_id}">
+        //             <button onclick="
+        //                  const qty = document.getElementById('qty-${item.item_id}').value;
+        //                  addToCart(${item.item_id}, '${itemNameEscaped}', qty);"
+        //             >Add</button>
+        //             <button onclick="openEditItem(${item.item_id})">Edit</button>
+        //             <button onclick="handleItemDeletion(${item.item_id})">Delete</button>
+        //         </div>
+        //     </div>
+        // `;
         row.innerHTML = `
             <!-- 1️⃣ Item name -->
             <div style="display:flex; align-items:center; gap:10px;">
@@ -1212,7 +1256,7 @@ function renderItemList(itemsToRender) {
             </div>
 
             <!-- 2️⃣ Stock -->
-            <div>${item.stock_level}</div>
+            <div>${item.item_cost}</div>
 
             <!-- 3️⃣ Order qty -->
             <input
@@ -1226,7 +1270,7 @@ function renderItemList(itemsToRender) {
                 placeholder="0.0"
             />
 
-            <!-- 4️⃣ ADD BUTTON (YOU WERE MISSING THIS) -->
+            <!-- 4️⃣ ADD BUTTON  -->
             <button onclick="
                          const qty = document.getElementById('qty-${item.item_id}').value;
                          addToCart(${item.item_id}, '${itemNameEscaped}', qty);"

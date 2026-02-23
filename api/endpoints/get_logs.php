@@ -10,6 +10,7 @@ try {
     $stmt = $conn->prepare("
         SELECT 
             l.item_id,
+            i.name,
             l.restock_date,
             l.admin_name,
             l.old_quantity,

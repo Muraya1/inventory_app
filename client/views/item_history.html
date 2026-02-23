@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item History</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            color: #333;
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 16px;
+        }
+
+        /* ── Search Bar ── */
+        .search-section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 24px;
+        }
+
+        .search-section h2 {
+            font-size: 1.2rem;
+            margin-bottom: 14px;
+            color: #1a1a2e;
+        }
+
+        .search-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .search-row input {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        .search-row input:focus { border-color: #4361ee; }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.85; }
+        .btn-primary { background: #4361ee; color: #fff; }
+        .btn-success { background: #2ec4b6; color: #fff; }
+        .btn-warning { background: #ff9f1c; color: #fff; }
+        .btn-danger  { background: #e63946; color: #fff; }
+
+        /* ── Dropdown Results ── */
+        .dropdown-wrapper { position: relative; flex: 1; min-width: 200px; }
+
+        #item-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            max-height: 220px;
+            overflow-y: auto;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        #item-dropdown .dropdown-item {
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.15s;
+        }
+
+        #item-dropdown .dropdown-item:hover { background: #f0f4ff; }
+
+        .dropdown-item .item-sku {
+            font-size: 0.78rem;
+            color: #888;
+            margin-left: 8px;
+        }
+
+        /* ── Item Info Card ── */
+        #history-section { display: none; }
+
+        .item-info-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 24px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .item-info-card img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .item-info-card .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 10px;
+            flex: 1;
+        }
+
+        .info-item label {
+            font-size: 0.75rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-item p {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-top: 2px;
+        }
+
+        .badge-active   { color: #2ec4b6; }
+        .badge-inactive { color: #e63946; }
+
+        /* ── Action Buttons ── */
+        .action-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        /* ── Tabs ── */
+        .tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #888;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            color: #4361ee;
+            border-bottom-color: #4361ee;
+        }
+
+        .tab-content {
+            background: #fff;
+            border-radius: 0 0 10px 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 24px;
+        }
+
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        /* ── Tables ── */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+
+        .data-table th {
+            background: #f7f8fc;
+            padding: 10px 12px;
+            text-align: left;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .data-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: middle;
+        }
+
+        .data-table tr:hover td { background: #f9faff; }
+
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .tag-green    { background: #d4f7f0; color: #1a9e8f; }
+        .tag-red      { background: #fde8ea; color: #c0392b; }
+        .tag-orange   { background: #fff3e0; color: #e65100; }
+        .tag-blue     { background: #e8eeff; color: #3451c7; }
+        .tag-grey     { background: #f0f0f0; color: #666; }
+
+        .empty-state {
+            text-align: center;
+            padding: 30px;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* ── Print Styles ── */
+        @media print {
+            .search-section, .action-bar, .tabs { display: none !important; }
+            #history-section { display: block !important; }
+            .tab-panel { display: block !important; }
+            .tab-content { box-shadow: none; }
+            body { background: #fff; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <h2>🔍 Item History Lookup</h2>
+        <div class="search-row">
+            <div class="dropdown-wrapper">
+                <input
+                    type="text"
+                    id="item-search"
+                    placeholder="Type item name or SKU to search..."
+                    autocomplete="off"
+                />
+                <div id="item-dropdown"></div>
+            </div>
+            <button class="btn btn-primary" onclick="triggerSearch()">Search</button>
+        </div>
+    </div>
+
+    <!-- History Section (hidden until item selected) -->
+    <div id="history-section">
+
+        <!-- Item Info Card -->
+        <div class="item-info-card" id="item-info-card"></div>
+
+        <!-- Action Buttons -->
+        <div class="action-bar">
+            <button class="btn btn-success" onclick="downloadCSV()">⬇ Download CSV</button>
+            <button class="btn btn-warning" onclick="window.print()">🖨 Print / Save PDF</button>
+            <button class="btn btn-danger"  onclick="clearHistory()">✕ Clear</button>
+        </div>
+
+        <!-- Tabs -->
+        <button class="tab-btn active" data-tab="logs" onclick="switchTab('logs')">
+    📦 Stock Logs
+</button>
+<button class="tab-btn" data-tab="orders" onclick="switchTab('orders')">
+    🛒 Orders
+</button>
+<button class="tab-btn" data-tab="alerts" onclick="switchTab('alerts')">
+    ⚠ Low Stock Alerts
+</button>
+
+        <div class="tab-content">
+            <!-- Stock Logs Tab -->
+            <div class="tab-panel active" id="tab-logs">
+                <table class="data-table" id="logs-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Change Type</th>
+                            <th>Old Qty</th>
+                            <th>Change</th>
+                            <th>New Qty</th>
+                            <th>Updated By</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logs-body"></tbody>
+                </table>
+            </div>
+
+            <!-- Orders Tab -->
+            <div class="tab-panel" id="tab-orders">
+                <table class="data-table" id="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order #</th>
+                            <th>Date</th>
+                            <th>Receiver</th>
+                            <th>Vendor</th>
+                            <th>Department</th>
+                            <th>Qty Taken</th>
+                            <th>Unit Price</th>
+                            <th>Approval</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-body"></tbody>
+                </table>
+            </div>
+
+            <!-- Alerts Tab -->
+            <div class="tab-panel" id="tab-alerts">
+                <table class="data-table" id="alerts-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date Triggered</th>
+                            <th>Stock Level at Alert</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="alerts-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div><!-- /history-section -->
+</div>
+
+<script src="../js/item_history.js"></script>
+</body>
+</html>

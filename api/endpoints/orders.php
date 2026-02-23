@@ -197,10 +197,11 @@ function fetchOrderHistory() {
                     o.order_timestamp,
                     a.to_status,
                     o.department_name, -- Ensure you use the ID for relations
-                    o.vendor_name
+                    p.project_name
                 FROM Orders o
-                JOIN order_audit_history a ON o.order_id = a.order_id
-                JOIN Users u ON o.user_id = u.user_id
+                LEFT JOIN order_audit_history a ON o.order_id = a.order_id
+                LEFT JOIN projects p ON o.project_number = p.project_number
+                LEFT JOIN Users u ON o.user_id = u.user_id
                 ORDER BY o.order_timestamp DESC
                 LIMIT :limit OFFSET :offset";
 
@@ -242,7 +243,7 @@ function fetchOrderHistory() {
 
     } catch (PDOException $e) {
         error_log($e->getMessage());
-        sendResponse(500, ["message" => "Database error fetching order history."]);
+        sendResponse(500, ["message" => "Database error fetching order history from API endpoint!!!!."]);
     }
 }
 
@@ -386,7 +387,8 @@ function createOrder() {
     if (
         empty($data->receiver_name) ||
         empty($data->vendor_name) ||
-        empty($data->department_id) ||
+        // empty($data->department_id) ||
+        // empty($data->project_name) ||
         empty($data->items)
     ) {
         sendResponse(400, ["message" => "Missing required order data."]);
@@ -396,6 +398,7 @@ function createOrder() {
     $receiverName = trim($data->receiver_name);
     $vendorName = trim($data->vendor_name);
     $departmentId = (int)$data->department_id;
+    $projectID = trim($data->project_id);
     $items = $data->items;
 
     try {
@@ -429,15 +432,16 @@ function createOrder() {
         // 2. Insert order with PENDING status
         $orderStmt = $conn->prepare(
             "INSERT INTO orders 
-             (user_id, department_id, receiver_name, vendor_name, order_timestamp, order_status)
-             VALUES (:user_id, :department_id, :receiver_name, :vendor_name, NOW(), 'PENDING')"
+             (user_id, department_id, receiver_name, vendor_name, order_timestamp, order_status, project_id)
+             VALUES (:user_id, :department_id, :receiver_name, :vendor_name, NOW(), 'PENDING', :project_id)"
         );
 
         $orderStmt->execute([
             ':user_id' => $userId,
             ':department_id' => $departmentId,
             ':receiver_name' => $receiverName,
-            ':vendor_name' => $vendorName
+            ':vendor_name' => $vendorName,
+            ':project_id' => $projectID
         ]);
 
         $orderId = $conn->lastInsertId();
@@ -486,6 +490,14 @@ function createOrder() {
             "order_id" => $orderId,
             "status" => "PENDING"
         ]);
+        // 6.update projects table with project number and name and order id from orders table
+        // $updateProjectStmt = $conn->prepare(
+        //     "UPDATE projects p
+        //      JOIN orders o ON o.project_name = p.project_name
+        //      SET p.order_id = o.order_id
+        //      WHERE o.order_id = :order_id"
+        // );
+        // $updateProjectStmt->execute([':order_id' => $orderId]); 
 
     } catch (PDOException $e) {
         if ($conn->inTransaction()) {
